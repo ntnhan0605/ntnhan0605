@@ -1,8 +1,8 @@
-- 👋 Hi, I’m @ntnhan0605
-- 👀 I’m interested in guitar, play LOL
-- 🌱 
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me fb.com/ntnhan0605
+-   👋 Hi, I’m @ntnhan0605
+-   👀 I’m interested in guitar, play LOL
+-   🌱
+-   💞️ I’m looking to collaborate on ...
+-   📫 How to reach me fb.com/ntnhan0605
 
 <!---
 ntnhan0605/ntnhan0605 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
