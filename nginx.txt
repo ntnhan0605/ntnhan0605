@@ -1,0 +1,52 @@
+server {
+ listen 80;
+ listen 443;
+
+ server_name localhost 127.0.0.1 dev-sso.hellohealthgroup.com;
+ proxy_hide_header 'Access-Control-Allow-Origin'; 
+ proxy_set_header 'host' $host;
+ location ~* ^/(oauth2|userinfo|.well-known|hello) {
+  add_header 'Access-Control-Allow-Origin' '*' always;
+  add_header 'Access-Control-Allow_Credentials' 'true' always;
+  add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
+  add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
+  #proxy_pass https://staging-sso.hellohealthgroup.com;
+  proxy_pass http://192.168.2.80:4444;
+}
+
+ location ~* ^/(admin) {
+  add_header 'Access-Control-Allow-Origin' '*' always;
+  add_header 'Access-Control-Allow_Credentials' 'true' always;
+  add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
+  add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
+  #proxy_pass https://hydra-admin-stag.hellohealthgroup.com;
+  proxy_pass http://192.168.2.80:4445;
+}
+ 
+ location ~* ^/(api) {  
+  if ($http_origin ~ 'http://localhost') {  
+   set $cors 1;
+  }
+  if ($request_method = 'OPTIONS')  {
+   set $cors 2$cors;
+  }
+  if ($cors = '21') {
+   add_header 'Access-Control-Allow-Origin' '$http_origin' always;
+   add_header 'Access-Control-Allow-Credentials' 'true' always;
+   add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,PATCH' always;
+   add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Alt-Referer,authdata,platform,Authorization,authdata,preflight,profile,Accept,Accept-Encoding,Accept-Language,platform,X-Tracking, Correlation-ID, merchant-token,request-starttime' always;
+   return 204;
+  }
+  if ($cors = '1') {
+   add_header 'Access-Control-Allow-Origin' '$http_origin' always;
+   add_header 'Access-Control-Allow-Credentials' 'true' always;
+   add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,PATCH' always;
+   add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Alt-Referer,authdata,platform,Authorization,authdata,preflight,profile,Accept,Accept-Encoding,Accept-Language,platform,X-Tracking, Correlation-ID, merchant-token,request-starttime' always;
+  }
+  proxy_pass http://192.168.2.80:3001;
+ }
+
+ location / { 
+  proxy_pass http://192.168.2.80:3001;
+ }
+}

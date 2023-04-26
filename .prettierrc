@@ -1,9 +1,30 @@
 {
   "semi": false,
-  "tabWidth": 2,
-  "printWidth": 100,
   "singleQuote": true,
-  "trailingComma": "all",
-  "jsxSingleQuote": true,
-  "bracketSpacing": true
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
+  "trailingComma": "none",
+  "importOrder": [
+    "react",
+    "next",
+    "<THIRD_PARTY_MODULES>",
+    "components/",
+    "constants/",
+    "icons/",
+    "interfaces/",
+    "services/",
+    "utils/",
+    "styles/",
+    "public/",
+    "^[(.|..)/]",
+    "(.|..)/*.(svg|css|scss|sass)"
+  ],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": false,
+  "importOrderCaseInsensitive": false,
+  "endOfLine": "auto"
 }
