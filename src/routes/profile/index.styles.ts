@@ -10,7 +10,7 @@ export const ProfileContainer = styled(Container)(({ theme }) => {
 })
 
 export const ProfileBox = styled(Box)(({ theme }) => {
-  return { padding: theme.spacing(7.5) }
+  return { padding: theme.spacing(7) }
 })
 
 export const ProfileBoxItem = styled(Box)(({ theme }) => {
@@ -26,7 +26,6 @@ export const ProfileAvatar = styled(Avatar)(({ theme }) => {
     position: 'relative',
     width: '100%',
     paddingTop: '100%',
-    boxShadow: theme.shadows[3],
     borderRadius: theme.shape.borderRadius,
     '.MuiAvatar-img': {
       position: 'absolute',

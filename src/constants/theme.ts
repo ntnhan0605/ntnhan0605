@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material'
 
 export const globalStylesValue = {
   ':root': {
-    fontSize: 15
+    fontSize: 10
   },
   body: {
     color: '#252525',
