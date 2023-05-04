@@ -1,15 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material'
+import { globalStylesValue, themeValue } from 'constants/theme'
 import './styles/index.css'
-import RoutesIndex from './routes'
 import reportWebVitals from './reportWebVitals'
-import { CssBaseline } from '@mui/material'
+import RoutesIndex from './routes'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-		<CssBaseline />
-    <RoutesIndex />
+    <ThemeProvider theme={themeValue}>
+      <CssBaseline enableColorScheme />
+      <GlobalStyles styles={globalStylesValue} />
+      <RoutesIndex />
+    </ThemeProvider>
   </React.StrictMode>
 )
 
