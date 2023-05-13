@@ -2,7 +2,9 @@ import { createTheme } from '@mui/material'
 
 export const globalStylesValue = {
   ':root': {
-    fontSize: 10
+    fontFamily: '"Montserrat", sans-serif',
+    fontSize: 10,
+    lineHeight: 1.5
   },
   body: {
     color: '#252525',

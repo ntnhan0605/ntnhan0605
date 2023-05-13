@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import { Grid, Typography } from '@mui/material'
 import {
   ProfileAvatar,
@@ -17,12 +17,12 @@ import {
   ProfileTable
 } from './index.styles'
 
-export const Profile = () => {
+export default function Resume() {
   return (
     <>
-      <Helmet>
-        <title>CV - NGUYEN THIEN NHAN</title>
-      </Helmet>
+      <Head>
+        <title>CV - Nguyen Thien Nhan</title>
+      </Head>
       <ProfileContainer maxWidth="md">
         <ProfileBox borderRadius={1}>
           <ProfileBoxItem>

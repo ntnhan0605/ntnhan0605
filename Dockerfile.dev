@@ -1,19 +1,28 @@
-FROM node:16-alpine AS base
-ENV PORT 8000
-EXPOSE 8000
+# FROM node:16-alpine AS base
 
-RUN apk --no-cache add curl
+# RUN apk --no-cache add curl
+
+# RUN mkdir -p /usr/src/app
+
+# WORKDIR /usr/src/app
+
+# COPY ./package.json ./
+
+# RUN "npm" "install"
+
+FROM node:16-alpine
+ENV PORT 8000
 
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY . /usr/src/app
+COPY ./ /usr/src/app
 
-RUN cd /usr/src/app 
+# COPY --from=base /usr/src/app /usr/src/app
 
-RUN npm install
+COPY .env.local /usr/src/app/.env.local
 
-# COPY .env.local /usr/src/app/.env.local
+EXPOSE 8000
 
-CMD "npm" "start"
+CMD "npm" "run" "dev"
