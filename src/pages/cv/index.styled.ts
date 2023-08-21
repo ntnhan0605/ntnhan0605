@@ -1,4 +1,8 @@
-import { Avatar, Box, Container, Divider, styled } from '@mui/material'
+import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
+import Divider from '@mui/material/Divider'
+import { styled } from '@mui/material/styles'
 
 export const ProfileContainer = styled(Container)(({ theme }) => {
   return {

@@ -18,5 +18,9 @@
     "ecmaVersion": "latest"
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
-  "rules": { "prettier/prettier": "error" }
+  "rules": {
+    "prettier/prettier": "error",
+    "react/display-name": "off",
+    "@typescript-eslint/no-empty-function": "off"
+  }
 }

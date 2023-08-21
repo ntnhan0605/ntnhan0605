@@ -2,37 +2,36 @@ import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useStore } from '@/zustand/zustandProvider'
-import Typography from '@mui/material/Typography'
 import { shallow } from 'zustand/shallow'
 import { Button } from '@/components/components/button'
 import { Layout } from '@/components/layouts'
 import { NextPageWithLayout } from './_app.page'
 
-type HomepageProps = {
+type UserPageProps = {
   // test?: string
   // test1?: number
 }
 const useUserStore = () => useStore((state) => state, shallow)
 
-const HomePage: NextPageWithLayout<HomepageProps> = (props) => {
+const UserPage: NextPageWithLayout<UserPageProps> = (props) => {
   const { user, login } = useUserStore()
+
   return (
     <>
       {user}
-      <Button onClick={() => login?.('Nhan Nguyen', 'password')}>Button</Button>
+      <Button onClick={() => login?.('User', 'pass')}>Button</Button>
+      <Link href="/">Homepage</Link>
       <Link href="/cv">CV</Link>
       <Link href="/user">User</Link>
-
-      <Typography variant="h2">Heading 2</Typography>
     </>
   )
 }
 
-HomePage.getLayout = (page) => {
+UserPage.getLayout = (page) => {
   return (
     <Layout>
       <Head>
-        <title>Homepage</title>
+        <title>User</title>
       </Head>
       {page}
     </Layout>
@@ -41,8 +40,14 @@ HomePage.getLayout = (page) => {
 
 export function getServerSideProps(
   ctx: GetServerSidePropsContext
-): GetServerSidePropsResult<HomepageProps> {
-  return { props: { test: 'testProps', test1: 1 } }
+): GetServerSidePropsResult<UserPageProps> {
+  return {
+    props: {
+      test: 'testProps',
+      test1: 1,
+      initialZustandState: { user: 'Nhan Nguyen Initialize' }
+    }
+  }
 }
 
-export default HomePage
+export default UserPage

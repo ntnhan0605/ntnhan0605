@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import {
   CssBaseline,
   GlobalStyles,
@@ -66,7 +67,9 @@ const Resume: NextPageWithLayout = () => {
               </ProfileTable>
             </Grid>
             <Grid width={164} item>
-              <ProfileAvatar src="/images/avatar.jpg" />
+              <Link href="/">
+                <ProfileAvatar src="/images/avatar.jpg" />
+              </Link>
             </Grid>
           </Grid>
         </ProfileBoxItem>
