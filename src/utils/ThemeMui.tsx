@@ -8,13 +8,29 @@ import {
 } from '@mui/material/styles'
 import { ReactNode } from 'react'
 
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    handwritetitle1: React.CSSProperties
+  }
+
+  interface TypographyVariantsOptions {
+    handwritetitle1?: React.CSSProperties
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    handwritetitle1: true
+  }
+}
+
 const globalStylesValue = {
   '::selection': {
     color: '#fff',
     background: '#1d1d1d'
   },
-  body: {
-    fontFamily: '"Open Sans", sans-serif'
+  a: {
+    textDecoration: 'none'
   }
 }
 
@@ -54,10 +70,11 @@ let themeValue = createTheme({
   typography(p) {
     return {
       boxSizing: 'border-box',
-      htmlFontSize: 15,
+      htmlFontSize: 16,
       fontFamily: '"Open Sans", sans-serif',
       fontSize: 15,
       lineHeight: 1.5,
+
       h1: {
         color: p.primary.dark,
         fontFamily: '"Josefin Sans", sans-serif',
@@ -107,33 +124,55 @@ let themeValue = createTheme({
         fontStyle: 'italic',
         lineHeight: 2
       },
-
-      subtitle1: { fontFamily: '"EB Garamond", serif', fontSize: 18 },
-      subtitle2: { fontFamily: '"EB Garamond", serif', fontSize: 16 },
-      bigtitle1: {
+      handwritetitle1: {
         fontFamily: '"The Gwathmey", script',
         fontSize: 55,
         lineHeight: 1.2
       },
-      body1: { fontFamily: '"Open Sans", sans-serif' },
-      body2: { fontFamily: '"Open Sans", sans-serif' }
+      subtitle1: { fontFamily: '"EB Garamond", serif', fontSize: 18 },
+      subtitle2: { fontFamily: '"EB Garamond", serif', fontSize: 16 },
+      body1: { fontFamily: '"Open Sans", sans-serif', fontSize: 16 },
+      body2: {
+        fontFamily: '"Open Sans", sans-serif',
+        fontSize: 14
+      }
     }
   },
+  breakpoints: {
+    values: {
+      xl: 1306,
+      lg: 1306,
+      md: 966,
+      sm: 546,
+      xs: 320
+    }
+  },
+  components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          handwritetitle1: 'span'
+        }
+      }
+    }
+  },
+  spacing: 1,
   shape: {
     borderRadius: 0
   }
 })
 themeValue = responsiveFontSizes(themeValue)
 
-export type ThemeMuiContextComponentProps = { children: ReactNode }
-export const ThemeMuiContextComponent = (
-  props: ThemeMuiContextComponentProps
-) => {
+export type ThemeMuiProps = {
+  children: ReactNode
+}
+export const ThemeMui = (props: ThemeMuiProps) => {
   const { children } = props
   return (
     <ThemeProvider theme={themeValue}>
       <GlobalStyles styles={globalStylesValue} />
-      <CssBaseline enableColorScheme>{children}</CssBaseline>
+      <CssBaseline enableColorScheme />
+      {children}
     </ThemeProvider>
   )
 }

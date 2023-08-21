@@ -3,8 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useStore } from '@/zustand/zustandProvider'
 import { shallow } from 'zustand/shallow'
-import { Button } from '@/components/components/button'
-import { Layout } from '@/components/layouts'
+import { Button } from '@/components/atoms/button'
+import { Layout } from '@/components/templates/layoutClient'
 import { NextPageWithLayout } from './_app.page'
 
 type UserPageProps = {

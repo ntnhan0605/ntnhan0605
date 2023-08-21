@@ -1,7 +1,7 @@
+import { Footer } from '@/components/molecules/footer'
+import { Header } from '@/components/molecules/header'
+import { Main } from '@/components/molecules/main'
 import { FC, ReactNode } from 'react'
-import { Footer } from '../templates/footer'
-import { Header } from '../templates/header'
-import { Main } from '../templates/main'
 
 export type LayoutProps = { children: ReactNode }
 export const Layout: FC<LayoutProps> = (props) => {

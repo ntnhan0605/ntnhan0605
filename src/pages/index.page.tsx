@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { useStore } from '@/zustand/zustandProvider'
 import Typography from '@mui/material/Typography'
 import { shallow } from 'zustand/shallow'
-import { Button } from '@/components/components/button'
-import { Layout } from '@/components/layouts'
+import { Button } from '@/components/atoms/button'
+import { Layout } from '@/components/templates/layoutClient'
 import { NextPageWithLayout } from './_app.page'
 
 type HomepageProps = {
@@ -23,6 +23,7 @@ const HomePage: NextPageWithLayout<HomepageProps> = (props) => {
       <Link href="/cv">CV</Link>
       <Link href="/user">User</Link>
 
+      <Typography variant="handwritetitle1">bigTitle</Typography>
       <Typography variant="h2">Heading 2</Typography>
     </>
   )

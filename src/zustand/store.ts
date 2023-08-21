@@ -1,7 +1,8 @@
 import { UserStore, initialStoreUser, userStore } from '@/stores/user'
 import { useMemo } from 'react'
-import { StoreApi, UseBoundStore, create } from 'zustand'
+import { StoreApi, UseBoundStore } from 'zustand'
 import { devtools } from 'zustand/middleware'
+import { createWithEqualityFn } from 'zustand/traditional'
 
 /** Add more typeof store for all store */
 export type ZustandStore = UserStore
@@ -14,7 +15,7 @@ export const inititalStore: ZustandStore = {
 }
 
 export const initStore = (preloadState = inititalStore) => {
-  const zustandStore = create<ZustandStore>()(
+  const zustandStore = createWithEqualityFn<ZustandStore>()(
     devtools(
       (...a) => {
         /** Add more store in `initialState` */
@@ -30,7 +31,8 @@ export const initStore = (preloadState = inititalStore) => {
         return initialState
       },
       { enabled: process.env.NODE_ENV !== 'production' }
-    )
+    ),
+    Object.is
   )
   return zustandStore
 }

@@ -13,10 +13,8 @@
     "check-fmt": "prettier --check \"./**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@emotion/css": "^11.11.2",
-    "@emotion/react": "^11.11.0",
+    "@emotion/cache": "^11.11.0",
     "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.0",
     "@types/node": "20.1.1",
     "@types/react": "18.2.6",
@@ -38,7 +36,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
-    "prettier": "^2.8.8",
-    "zukeeper": "^1.0.2"
+    "prettier": "^2.8.8"
   }
 }
