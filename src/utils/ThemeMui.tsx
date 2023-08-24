@@ -122,16 +122,26 @@ let themeValue = createTheme({
         fontFamily: '"EB Garamond", serif',
         fontSize: 18,
         fontStyle: 'italic',
-        lineHeight: 2
+        lineHeight: 2,
+        textTransform: 'unset'
       },
       handwritetitle1: {
         fontFamily: '"The Gwathmey", script',
         fontSize: 55,
         lineHeight: 1.2
       },
-      subtitle1: { fontFamily: '"EB Garamond", serif', fontSize: 18 },
-      subtitle2: { fontFamily: '"EB Garamond", serif', fontSize: 16 },
-      body1: { fontFamily: '"Open Sans", sans-serif', fontSize: 16 },
+      subtitle1: {
+        fontFamily: '"EB Garamond", serif',
+        fontSize: 18
+      },
+      subtitle2: {
+        fontFamily: '"EB Garamond", serif',
+        fontSize: 16
+      },
+      body1: {
+        fontFamily: '"Open Sans", sans-serif',
+        fontSize: 16
+      },
       body2: {
         fontFamily: '"Open Sans", sans-serif',
         fontSize: 14

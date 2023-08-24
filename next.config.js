@@ -7,6 +7,15 @@ const nextConfig = {
       autoLabel: 'dev-only',
       labelFormat: '[dirname]_[local]'
     }
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack']
+    })
+
+    return config
   }
 }
 
