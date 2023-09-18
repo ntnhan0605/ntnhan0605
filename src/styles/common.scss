@@ -1,0 +1,97 @@
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:string';
+@import './variables.module.scss';
+
+$mediaBreakpoints: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
+
+.container,
+.container-fluid,
+[class^='container-'] {
+  padding-inline: 12px;
+  margin-inline: auto;
+  max-width: 100%;
+}
+@each $key in $mediaBreakpoints {
+  @media (min-width: map.get($breakpoint, $key)) {
+    .container {
+      max-width: map.get($container, $key);
+    }
+    .container-#{string.to-lower-case($key)} {
+      max-width: map.get($container, $key);
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -12px;
+}
+[class^='col-'] {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 12px;
+}
+@for $i from 1 to 12 {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: math.percentage(math.div($i, 12));
+  }
+}
+@each $key in $mediaBreakpoints {
+  @media screen and (min-width: map.get($breakpoint, $key)) {
+    @for $i from 1 to 12 {
+      .col-#{$key}-#{$i} {
+        flex: 0 0 auto;
+        width: math.percentage(math.div($i, 12));
+      }
+    }
+  }
+}
+
+@for $i from 1 to 12 {
+  .gt-#{$i * 4} {
+    margin: -#{math.div($i * 4, 2)}px !important;
+    > [class^='col-'] {
+      padding: #{math.div($i * 4, 2)}px !important;
+    }
+  }
+  .gty-#{$i * 4} {
+    margin-block: -#{math.div($i * 4, 2)}px !important;
+    > [class^='col-'] {
+      padding-block: #{math.div($i * 4, 2)}px !important;
+    }
+  }
+  .gtx-#{$i * 4} {
+    margin-inline: -#{math.div($i * 4, 2)}px !important;
+    > [class^='col-'] {
+      padding-inline: #{math.div($i * 4, 2)}px !important;
+    }
+  }
+}
+@each $key in $mediaBreakpoints {
+  @media screen and (min-width: map.get($breakpoint, $key)) {
+    @for $i from 1 to 12 {
+      .gt-#{$key}-#{$i * 4} {
+        margin: -#{math.div($i * 4, 2)}px !important;
+        > [class^='col-'] {
+          padding: #{math.div($i * 4, 2)}px !important;
+        }
+      }
+      .gty-#{$key}-#{$i * 4} {
+        margin-block: -#{math.div($i * 4, 2)}px !important;
+        > [class^='col-'] {
+          padding-block: #{math.div($i * 4, 2)}px !important;
+        }
+      }
+      .gtx-#{$key}-#{$i * 4} {
+        margin-inline: -#{math.div($i * 4, 2)}px !important;
+        > [class^='col-'] {
+          padding-inline: #{math.div($i * 4, 2)}px !important;
+        }
+      }
+    }
+  }
+}

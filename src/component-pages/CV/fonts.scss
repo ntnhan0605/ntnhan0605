@@ -157,3 +157,13 @@
   font-style: italic;
   src: url('../../../public/fonts/Libre_Bodoni/LibreBodoni-Italic.ttf');
 }
+
+@import '/src/styles/variables.module.scss';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $grey700;
+}
+
