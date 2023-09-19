@@ -4,6 +4,9 @@ export const metadata = {
   title: 'CV - Nguyen Thien Nhan - Front-End Developer',
   description: 'This is a resume document'
 }
+
+export const dynamic = 'force-dynamic'
+
 export default function CVPage() {
   return <CV />
 }

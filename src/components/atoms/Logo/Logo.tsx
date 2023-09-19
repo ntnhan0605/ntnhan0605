@@ -1,6 +1,6 @@
-import LogoSvg from '@/components/icons/logo.svg'
+import Link from 'next/link'
 import { FC } from 'react'
-import { StyledLogo } from './Logo.styled'
+import { IconComponent } from '../IconComponent'
 
 export type LogoProps = {
   href?: string
@@ -8,8 +8,8 @@ export type LogoProps = {
 export const Logo: FC<LogoProps> = (props) => {
   const { href } = props
   return (
-    <StyledLogo href={href || '/'}>
-      <LogoSvg />
-    </StyledLogo>
+    <Link href={href || '/'}>
+      <IconComponent name="lookup" />
+    </Link>
   )
 }

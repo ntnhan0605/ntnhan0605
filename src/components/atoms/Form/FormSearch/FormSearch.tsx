@@ -1,11 +1,10 @@
-import Lookup from '@/components/icons/lookup.svg'
 import {
   DetailedHTMLProps,
   ForwardRefRenderFunction,
   InputHTMLAttributes,
   forwardRef
 } from 'react'
-import { StyledButton, StyledForm, StyledInput } from './FormSearch.styled'
+import { IconComponent } from '../../IconComponent/IconComponent'
 
 export type FormSearchProps = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
@@ -16,12 +15,12 @@ const FormSearchWithouRef: ForwardRefRenderFunction<
   FormSearchProps
 > = (props, ref) => {
   return (
-    <StyledForm action="/" method="GET">
-      <StyledButton type="submit" size="small">
-        <Lookup />
-      </StyledButton>
-      <StyledInput name="s" placeholder="Tìm kiếm..." {...props} ref={ref} />
-    </StyledForm>
+    <form action="/" method="GET">
+      <button type="submit">
+        <IconComponent name="lookup" />
+      </button>
+      <input name="s" placeholder="Tìm kiếm..." {...props} ref={ref} />
+    </form>
   )
 }
 

@@ -1,4 +1,6 @@
+import { LayoutClient } from '@/components/templates/LayoutClient'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Suspense } from 'react'
 
 export async function generateStaticParams() {
@@ -19,7 +21,13 @@ export function generateMetadata(props: any): Metadata {
 
 const Homepage = (props: any) => {
   console.log('===ryan===> props : ', props)
-  return <Suspense fallback={<>loading</>}>Homepage</Suspense>
+  return (
+    <Suspense fallback={<>loading</>}>
+      <LayoutClient>
+        <Link href="/cv">Go to CV Page</Link>
+      </LayoutClient>
+    </Suspense>
+  )
 }
 
 export const dynamicParams = false
