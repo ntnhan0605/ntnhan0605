@@ -1,35 +1,15 @@
-import { LayoutClient } from '@/components/templates/LayoutClient'
-import type { Metadata } from 'next'
+import { ButtonComponent } from '@/components/atoms/ButtonComponent'
+import { LayoutComponent } from '@/components/templates/LayoutComponent'
 import Link from 'next/link'
-import { Suspense } from 'react'
 
-export async function generateStaticParams() {
-  return Array.from(Array(6).keys()).map((elt) => ({
-    slug: `${elt}`
-  }))
-}
-
-export function generateMetadata(props: any): Metadata {
-  return {
-    title: `Porfolio ${props.params.slug}`,
-    other: {
-      item: 'item',
-      data: 'data'
-    }
-  }
-}
-
-const Homepage = (props: any) => {
-  console.log('===ryan===> props : ', props)
+const IndexPage = () => {
   return (
-    <Suspense fallback={<>loading</>}>
-      <LayoutClient>
-        <Link href="/cv">Go to CV Page</Link>
-      </LayoutClient>
-    </Suspense>
+    <LayoutComponent>
+      <Link href="/cv">Go to CV Page</Link>
+      <Link href="/admin">Go to CV Admin</Link>
+      <ButtonComponent>Click to Admin</ButtonComponent>
+    </LayoutComponent>
   )
 }
 
-export const dynamicParams = false
-
-export default Homepage
+export default IndexPage

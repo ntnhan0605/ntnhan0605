@@ -1,9 +1,9 @@
 'use client'
+
 import clsx from 'clsx'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import styles from './CV.module.scss'
-import './fonts.scss'
 
 const infos: Record<string, React.ReactNode> = {
   'Date of Birth': '06/05/1994',
@@ -198,10 +198,6 @@ const projectsInCorsivaLab: Project[] = [
           https://www.tacamsteel.com/
         </Link>
         <br />
-        <Link href="https://development.corsivalab.xyz/prolink/">
-          https://development.corsivalab.xyz/prolink/
-        </Link>
-        <br />
         <Link href="https://medelabreastfeeding.asia/sg/">
           https://medelabreastfeeding.asia/sg/
         </Link>
@@ -219,10 +215,6 @@ const projectsInCorsivaLab: Project[] = [
   {
     name: (
       <>
-        <Link href="http://cwstresidences.azurewebsites.net/">
-          http://cwstresidences.azurewebsites.net/
-        </Link>
-        <br />
         <Link href="http://virtualwebdesign.azurewebsites.net/">
           http://virtualwebdesign.azurewebsites.net/
         </Link>
@@ -251,6 +243,14 @@ const projectsInMunkas: Project[] = [
 ]
 
 export const CV: FC = () => {
+  useEffect(() => {
+    const $body = document.getElementsByTagName('body')
+    $body.item(0)?.classList.add('cv-body')
+
+    return () => {
+      $body.item(0)?.classList.remove('cv-body')
+    }
+  }, [])
   return (
     <div className={clsx('container-lg', styles.cv)}>
       <div className={clsx(styles.container, styles.infos)}>
@@ -273,7 +273,7 @@ export const CV: FC = () => {
             </ul>
           </div>
           <div className={styles.infoRight}>
-            <a href="/">
+            <Link href="/">
               <div className={styles.avatar}>
                 <img
                   src="/images/avatar.jpg"
@@ -281,7 +281,7 @@ export const CV: FC = () => {
                   className={styles.avatarImg}
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -446,15 +446,15 @@ export const CV: FC = () => {
           <table className={clsx(styles.table, styles.bordered)}>
             <tbody>
               <tr>
-                <th className={styles.head40}>Website</th>
-                <th>Team size</th>
+                <th className={styles.head45}>Website</th>
+                {/* <th>Team size</th> */}
                 <th className={styles.head50}>Techonlogies used</th>
               </tr>
               {projectsInZivas.slice(1).map((project, index) => {
                 return (
                   <tr key={index.toString()}>
                     <td>{project.name}</td>
-                    <td>{project.size}</td>
+                    {/* <td>{project.size}</td> */}
                     <td>
                       <ul className={styles.list}>
                         {project.technology.map((item, itemIndex) => {
@@ -477,15 +477,15 @@ export const CV: FC = () => {
           <table className={clsx(styles.table, styles.bordered)}>
             <tbody>
               <tr>
-                <th className={styles.head40}>Website</th>
-                <th>Team size</th>
+                <th className={styles.head45}>Website</th>
+                {/* <th>Team size</th> */}
                 <th className={styles.head50}>Techonlogies used</th>
               </tr>
               {projectsInCorsivaLab.map((project, index) => {
                 return (
                   <tr key={index.toString()}>
                     <td>{project.name}</td>
-                    <td>{project.size}</td>
+                    {/* <td>{project.size}</td> */}
                     <td>
                       <ul className={styles.list}>
                         {project.technology.map((item, itemIndex) => {
@@ -508,15 +508,15 @@ export const CV: FC = () => {
           <table className={clsx(styles.table, styles.bordered)}>
             <tbody>
               <tr>
-                <th className={styles.head40}>Website</th>
-                <th>Team size</th>
+                <th className={styles.head45}>Website</th>
+                {/* <th>Team size</th> */}
                 <th className={styles.head50}>Techonlogies used</th>
               </tr>
               {projectsInMunkas.map((project, index) => {
                 return (
                   <tr key={index.toString()}>
                     <td>{project.name}</td>
-                    <td>{project.size}</td>
+                    {/* <td>{project.size}</td> */}
                     <td>
                       <ul className={styles.list}>
                         {project.technology.map((item, itemIndex) => {
@@ -529,7 +529,7 @@ export const CV: FC = () => {
                 )
               })}
               <tr>
-                <td colSpan={3}>
+                <td colSpan={2}>
                   <p className={styles.note}>
                     <strong>* Note:</strong> Munkas Agency is a social media
                     company so each campaign has one website for each project.

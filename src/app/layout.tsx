@@ -1,10 +1,14 @@
 import '@/styles/global.scss'
+import '@/styles/index.scss'
+import { customGenerateMetadata } from '@/utils/metadata'
+import { PropsWithChildren } from 'react'
 
-export default function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
+export const generateMetadata = customGenerateMetadata({})
+
+export default function RootLayout(props: PropsWithChildren) {
   return (
-    <html lang="vi">
-      <body>{children}</body>
+    <html lang="en">
+      <body>{props.children}</body>
     </html>
   )
 }

@@ -1,0 +1,21 @@
+@import '/src/styles/variables.module.scss';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+	line-height: 2;
+  color: #fff;
+  background-color: $grey900;
+  &:hover {
+    background-color: $grey800;
+  }
+}
+
+.medium {
+  padding: 8px 52px;
+}

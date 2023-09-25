@@ -158,12 +158,21 @@
   src: url('../../../public/fonts/Libre_Bodoni/LibreBodoni-Italic.ttf');
 }
 
-@import '/src/styles/variables.module.scss';
+@import '../../styles/variables.module.scss';
 
-body {
+.cv-body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  line-height: 1.5;
+  font-weight: 400;
   color: $grey700;
-}
+  * {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
 
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Libre Bodoni', serif;
+	}
+}

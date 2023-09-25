@@ -5,8 +5,8 @@ $breakpoint: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+  xl: 1400px,
+  xxl: 1700px
 );
 $container: (
   xs: 100%,
@@ -20,17 +20,6 @@ $container: (
 $white: #fff;
 
 $neutral50: #ededed;
-
-$gray50: #d0d0d0;
-$gray100: #c5c5c5;
-$gray200: #b9b9b9;
-$gray300: #adadad;
-$gray400: #a2a2a2;
-$gray500: #969696;
-$gray600: #8b8b8b;
-$gray700: #7d7d7d;
-$gray800: #6f6f6f;
-$gray900: #616161;
 
 $grey50: #fafafa;
 $grey100: #f5f5f5;
@@ -57,16 +46,6 @@ $amber900: #94765f;
 :export {
   colors: {
     white: $white;
-    gray50: $gray50;
-    gray100: $gray100;
-    gray200: $gray200;
-    gray300: $gray300;
-    gray400: $gray400;
-    gray500: $gray500;
-    gray600: $gray600;
-    gray700: $gray700;
-    gray800: $gray800;
-    gray900: $gray900;
 
     grey50: $grey50;
     grey100: $grey100;

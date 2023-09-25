@@ -1,14 +1,15 @@
 import { Footer } from '@/components/molecules/Footer'
-import { Header } from '@/components/molecules/Header'
+import { HeaderComponent } from '@/components/molecules/HeaderComponent'
 import { Main } from '@/components/molecules/Main'
 import { FC, ReactNode } from 'react'
 
-export type LayoutClientProps = { children: ReactNode }
-export const LayoutClient: FC<LayoutClientProps> = (props) => {
+export type LayoutComponentProps = { children: ReactNode }
+
+export const LayoutComponent: FC<LayoutComponentProps> = (props) => {
   const { children } = props
   return (
     <>
-      <Header />
+      <HeaderComponent />
       <Main>{children}</Main>
       <Footer />
     </>

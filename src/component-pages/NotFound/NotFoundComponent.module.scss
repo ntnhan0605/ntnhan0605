@@ -1,0 +1,21 @@
+@import '/src/styles/variables.module.scss';
+
+.container {
+  width: 100%;
+  max-width: 714px;
+  margin-inline: auto;
+  text-align: center;
+  padding-top: 160px;
+  padding-bottom: 250px;
+  .title {
+    font-family: 'Josefin Sans', sans-serif;
+    color: $grey900;
+    line-height: 1.33;
+  }
+  .description {
+    margin-top: 14px;
+  }
+  .buttonContainer {
+    margin-top: 52px;
+  }
+}

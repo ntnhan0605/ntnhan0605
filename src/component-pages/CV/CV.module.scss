@@ -1,7 +1,7 @@
 @import '/src/styles/variables.module.scss';
 
 .cv {
-  padding-block: 40px;
+  padding-block: 30px; 
 }
 
 .name {
@@ -33,13 +33,21 @@
 }
 
 .subtitle {
-  color: $gray800;
+  color: $grey800;
+  font-family: inherit !important;
   font-weight: 600;
   margin-bottom: 8px;
   letter-spacing: 0.05em;
   &.note {
     text-decoration: underline;
   }
+}
+
+.listTitle {
+	font-family: inherit !important;
+	font-weight: 400;
+	margin-top: 4px;
+	margin-bottom: 2px;
 }
 
 .description {
@@ -90,14 +98,20 @@
   --border-color: #{$grey800};
   width: 100%;
   th {
-    font-weight: 500;
+    font-weight: 600;
     text-align: left;
+  }
+  td {
+    white-space: break-word;
   }
   .head30 {
     width: 30%;
   }
   .head40 {
     width: 40%;
+  }
+  .head45 {
+    width: 45%;
   }
   .head50 {
     width: 50%;
@@ -106,13 +120,16 @@
     width: 60%;
   }
 
-	.note {
-		font-style: italic;
-	}
+  .note {
+    font-style: italic;
+    strong {
+      font-weight: 500;
+    }
+  }
 
-	~ .table {
-		margin-top: 16px;
-	}
+  ~ .table {
+    margin-top: 16px;
+  }
 
   &.bordered {
     tr {
@@ -195,11 +212,11 @@
     margin-top: 24px;
   }
 
-	.projectTitle {
-		padding-left: 16px;
-		color: $grey600;
-		font-size: 15px;
-		font-weight: 600;
-		letter-spacing: 0.05em;
-	}
+  .projectTitle {
+    padding-left: 16px;
+    color: $grey600;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
 }
