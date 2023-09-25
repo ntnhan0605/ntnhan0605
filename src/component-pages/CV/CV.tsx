@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { FC, useEffect } from 'react'
 import styles from './CV.module.scss'
+import './fonts.scss'
 
 const infos: Record<string, React.ReactNode> = {
   'Date of Birth': '06/05/1994',
