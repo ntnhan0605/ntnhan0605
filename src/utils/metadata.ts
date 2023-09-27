@@ -33,7 +33,7 @@ export const customGenerateMetadata = (
       description: metadata.description,
       images: [{ url: metadata.image, alt: metadata.title.toString() }]
     }
-    metadata.icons = '/favicon.png'
+    metadata.icons = '/favicon.svg'
     return metadata
   }
 }

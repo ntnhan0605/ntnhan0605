@@ -1,11 +1,11 @@
 import { CV } from '@/component-pages/CV'
 import { MainComponent } from '@/components/Main'
-import { Metadata } from 'next'
+import { customGenerateMetadata } from '@/utils/metadata'
 
-export const metadata: Metadata = {
+export const generateMetadata = customGenerateMetadata({
   title: 'CV - Nguyen Thien Nhan - Front-End Developer',
   description: 'This is a resume document'
-}
+})
 
 function CVPage() {
   return (
