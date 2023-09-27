@@ -1,4 +1,5 @@
 import { CV } from '@/component-pages/CV'
+import { MainComponent } from '@/components/Main'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,10 +7,12 @@ export const metadata: Metadata = {
   description: 'This is a resume document'
 }
 
-export const dynamic = 'force-dynamic'
-
-const CVPage = () => {
-  return <CV />
+function CVPage() {
+  return (
+    <MainComponent className="cv-body">
+      <CV />
+    </MainComponent>
+  )
 }
 
 export default CVPage

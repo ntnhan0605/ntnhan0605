@@ -1,0 +1,40 @@
+@import '/src/styles/variables.module.scss';
+
+.form {
+  display: flex;
+  align-items: flex-end;
+  max-width: 150px;
+}
+
+.button {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  outline: none !important;
+  border: none;
+  background-color: transparent;
+  margin-right: 6px;
+  font-size: 17px;
+  color: $grey600;
+  cursor: pointer;
+  transition: 0.25s linear all;
+  .icon {
+    font-size: inherit;
+  }
+
+  &:hover {
+    color: $grey800;
+    transition: 0.25s linear all;
+  }
+}
+
+.input {
+  width: 100%;
+  outline: none !important;
+  border: none;
+  border-bottom: 1px solid $grey200;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-align: right;
+}

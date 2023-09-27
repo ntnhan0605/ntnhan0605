@@ -2,7 +2,7 @@
 
 import clsx from 'clsx'
 import Link from 'next/link'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import styles from './CV.module.scss'
 import './fonts.scss'
 
@@ -244,14 +244,6 @@ const projectsInMunkas: Project[] = [
 ]
 
 export const CV: FC = () => {
-  useEffect(() => {
-    const $body = document.getElementsByTagName('body')
-    $body.item(0)?.classList.add('cv-body')
-
-    return () => {
-      $body.item(0)?.classList.remove('cv-body')
-    }
-  }, [])
   return (
     <div className={clsx('container-lg', styles.cv)}>
       <div className={clsx(styles.container, styles.infos)}>

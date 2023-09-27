@@ -1,5 +1,7 @@
+import { LoadingPageComponent } from '@/component-pages/Loading'
+
 const LoadingPage = () => {
-  return <>Loading</>
+  return <LoadingPageComponent />
 }
 
 export default LoadingPage

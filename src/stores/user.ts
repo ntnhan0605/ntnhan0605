@@ -1,4 +1,4 @@
-import { ZustandStore } from '@/zustand/store'
+import { ZustandStore } from '@/utils/store'
 import { StateCreator } from 'zustand'
 
 export type UserStore = {
@@ -7,8 +7,7 @@ export type UserStore = {
 }
 
 export const initialStoreUser: UserStore = {
-  user: null,
-  login: () => {}
+  user: null
 }
 
 export const userStore: StateCreator<ZustandStore, [], [], UserStore> = (

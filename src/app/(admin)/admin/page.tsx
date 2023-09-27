@@ -1,4 +1,4 @@
-import { ButtonComponent } from '@/components/atoms/ButtonComponent'
+import { ButtonComponent } from '@/components/Button'
 
 export const metadata = {
   title: 'Admin'
@@ -14,5 +14,7 @@ const AdminPage = () => {
     </>
   )
 }
+
+export const dynamic = 'force-dynamic'
 
 export default AdminPage

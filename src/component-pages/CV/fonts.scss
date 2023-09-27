@@ -159,6 +159,9 @@
 }
 
 @import '../../styles/variables.module.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/reset.scss';
+@import '../../styles/common.scss';
 
 .cv-body {
   font-family: 'Montserrat', sans-serif;
@@ -172,7 +175,21 @@
     line-height: 1.5;
   }
 
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Libre Bodoni', serif;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Libre Bodoni', serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: $amber600;
+      transition: 0.25s ease-in all;
+    }
+  }
 }
