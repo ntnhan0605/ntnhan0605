@@ -1,12 +1,17 @@
+import { AppProgressBar } from '@/components/ProgressBar/AppProgressBar'
+import { PropsWithChildren } from 'react'
+
 import '@/styles/global.scss'
 import '@/styles/index.scss'
-import { PropsWithChildren } from 'react'
 
 export default function RootLayout(props: PropsWithChildren) {
   const { children } = props
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppProgressBar />
+        {children}
+      </body>
     </html>
   )
 }
