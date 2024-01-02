@@ -1,0 +1,71 @@
+@import '/src/styles/variables.module.scss';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 2;
+  cursor: pointer;
+}
+
+.primary {
+  color: #fff;
+  background-color: $grey900;
+  transition: ease-out background-color 0.2s, ease-out color 0.2s;
+  &:hover {
+    background-color: $grey800;
+  }
+}
+
+.default {
+  color: $grey600;
+  border-color: $grey600;
+  background-color: transparent;
+  transition: ease-out background-color 0.2s, ease-out color 0.2s;
+  &:hover {
+    color: $grey900;
+    border-color: $grey900;
+  }
+}
+
+.link {
+  position: relative;
+  &:after {
+    position: absolute;
+  }
+}
+
+.outline {
+  color: $grey500;
+  border-color: $grey500;
+  background-color: transparent !important;
+  &:hover {
+    color: $grey900;
+    border-color: $grey900;
+  }
+}
+
+.outline-border {
+  .border {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    #{Top} {
+    }
+  }
+}
+
+.md {
+  padding: 8px 52px;
+}
+
+.disabled {
+  color: $grey300;
+  border-color: $grey300;
+  pointer-events: none;
+  cursor: not-allowed;
+}

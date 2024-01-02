@@ -1,4 +1,4 @@
-import { ButtonComponent } from '@/components/Button'
+import { Button } from '@/components/Button'
 
 export const metadata = {
   title: 'Admin'
@@ -8,9 +8,9 @@ const AdminPage = () => {
   return (
     <>
       AdminPage
-      <ButtonComponent href="/" useLink>
+      <Button href="/" useLink>
         Click to Admin
-      </ButtonComponent>
+      </Button>
     </>
   )
 }

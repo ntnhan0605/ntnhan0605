@@ -10,14 +10,19 @@
     "lint": "eslint \"./**/*.{ts,tsx,js}\"",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
-    "check-fmt": "prettier --check \"./**/*.{ts,tsx}\""
+    "check-fmt": "prettier --check \"./**/*.{ts,tsx}\"",
+    "predev": "ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
+    "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx"
   },
   "dependencies": {
+    "@ant-design/static-style-extract": "^1.0.2",
+    "antd": "^5.11.1",
     "clsx": "^2.0.0",
-    "next": "13.4.1",
+    "next": "^13.5.6",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-transition-group": "^4.4.5",
     "typescript": "5.0.4",
     "zustand": "^4.4.1"
   },
@@ -27,8 +32,10 @@
     "@types/nprogress": "^0.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "@types/react-transition-group": "^4.4.10",
     "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
+    "cross-env": "^7.0.3",
     "eslint": "^8.40.0",
     "eslint-config-next": "13.4.1",
     "eslint-config-prettier": "^8.8.0",
@@ -36,6 +43,8 @@
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "sass": "^1.67.0"
+    "sass": "^1.67.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2"
   }
 }

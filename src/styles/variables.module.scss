@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+$mediaBreakpoints: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
 $breakpoint: (
   xs: 320px,
   sm: 576px,
@@ -32,6 +33,17 @@ $grey700: #616161;
 $grey800: #424242;
 $grey900: #212121;
 
+$gray50: #f9f8f8;
+$gray100: #f8f7f7;
+$gray200: #f7f5f5;
+$gray300: #f6f4f4;
+$gray400: #f5f3f3;
+$gray500: #f4f2f2;
+$gray600: #dbd9d9;
+$gray700: #c3c1c1;
+$gray800: #aaa9a9;
+$gray900: #929191;
+
 $amber50: #fbe2cf;
 $amber100: #fadcc5;
 $amber200: #f9d6bb;
@@ -42,6 +54,17 @@ $amber600: #deb18f;
 $amber700: #c59d7f;
 $amber800: #ac896f;
 $amber900: #94765f;
+
+$red50: #ed9898;
+$red100: #ea8484;
+$red200: #e66f6f;
+$red300: #e35a5a;
+$red400: #df4646;
+$red500: #dc3232;
+$red600: #dc3232;
+$red700: #c62d2d;
+$red800: #b02828;
+$red900: #9a2323;
 
 :export {
   colors: {
@@ -57,6 +80,17 @@ $amber900: #94765f;
     grey700: $grey700;
     grey800: $grey800;
     grey900: $grey900;
+
+    gray50: $gray50;
+    gray100: $gray100;
+    gray200: $gray200;
+    gray300: $gray300;
+    gray400: $gray400;
+    gray500: $gray500;
+    gray600: $gray600;
+    gray700: $gray700;
+    gray800: $gray800;
+    gray900: $gray900;
 
     amber50: $amber50;
     amber100: $amber100;

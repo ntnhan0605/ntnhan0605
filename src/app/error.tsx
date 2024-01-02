@@ -1,14 +1,9 @@
 'use client'
 
 import { NotFoundComponent } from '@/component-pages/NotFound'
-import { LayoutComponent } from '@/components/Layout'
 
 function ErrorPage() {
-  return (
-    <LayoutComponent>
-      <NotFoundComponent title="Error" />
-    </LayoutComponent>
-  )
+  return <NotFoundComponent title="Error" />
 }
 
 export default ErrorPage

@@ -1,0 +1,28 @@
+@use 'sass:map';
+@import '/src/styles/variables.module.scss';
+
+$title: (
+  xs: 18px,
+  sm: 20px,
+  md: 29px,
+  lg: 40px,
+  xl: 45px,
+  xxl: 50px
+);
+
+.title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+@each $key, $fontSize in $title {
+  .title-#{$key} {
+    font-size: $fontSize;
+  }
+  @media screen and (max-width: map.get($breakpoint, $key)) {
+    .title-#{$key} {
+      font-size: $fontSize * 0.875;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { LayoutClient } from '@/components/Layout/LayoutClient'
 import { AppProgressBar } from '@/components/ProgressBar/AppProgressBar'
 import { PropsWithChildren } from 'react'
 
@@ -10,7 +11,7 @@ export default function RootLayout(props: PropsWithChildren) {
     <html lang="en">
       <body>
         <AppProgressBar />
-        {children}
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   )

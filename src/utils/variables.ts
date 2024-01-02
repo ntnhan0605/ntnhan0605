@@ -6,6 +6,8 @@ type Variables = {
   breakpoint: Record<string, string>
 }
 
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+
 const variables: Variables = {
   colors: {},
   container: {},
@@ -21,4 +23,5 @@ Object.keys(variablesModule).map((key) => {
   }
 })
 
+export type { Size, Variables }
 export { variables }

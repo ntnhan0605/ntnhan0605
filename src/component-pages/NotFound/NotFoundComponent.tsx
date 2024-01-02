@@ -1,5 +1,4 @@
-'use client'
-import { ButtonComponent } from '@/components/Button'
+import { Button } from '@/components/Button'
 import { FC, ReactNode } from 'react'
 import styles from './NotFoundComponent.module.scss'
 
@@ -11,19 +10,15 @@ export type NotFoundComponentProps = {
 export const NotFoundComponent: FC<NotFoundComponentProps> = (props) => {
   const { title, description, url = '/' } = props
 
-  const handleClick = () => {
-    window.location.href = url
-  }
-
   return (
     <div className="container">
       <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.description}>{description}</div>
         <div className={styles.buttonContainer}>
-          <ButtonComponent className={styles.button} onClick={handleClick}>
+          <Button href={url} className={styles.button} useLink>
             Back To Home
-          </ButtonComponent>
+          </Button>
         </div>
       </div>
     </div>

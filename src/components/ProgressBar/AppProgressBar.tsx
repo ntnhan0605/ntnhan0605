@@ -1,7 +1,8 @@
 'use client'
-import { FC, useEffect } from 'react'
-import NProgress from 'nprogress'
 import { variables } from '@/utils/variables'
+import { Router } from 'next/router'
+import NProgress from 'nprogress'
+import { FC, useEffect } from 'react'
 
 const config = {
   color: variables.colors.amber600,
@@ -87,13 +88,22 @@ export const AppProgressBar: FC = () => {
     </style>
   )
   NProgress.configure({ showSpinner: false })
-  NProgress.start()
+  const start = () => {
+    NProgress.start()
+  }
+  const done = () => {
+    NProgress.done()
+  }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('popstate', () => {
-        NProgress.done()
-      })
+    Router.events.on('routeChangeStart', start)
+    Router.events.on('routeChangeComplete', done)
+    Router.events.on('routeChangeError', done)
+
+    return () => {
+      Router.events.off('routeChangeStart', start)
+      Router.events.off('routeChangeComplete', done)
+      Router.events.off('routeChangeError', done)
     }
   }, [])
 

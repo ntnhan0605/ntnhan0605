@@ -1,0 +1,82 @@
+@use 'sass:map';
+@import '/src/styles/variables.module.scss';
+
+.widgetTitle {
+  margin-bottom: 14px;
+  color: $grey900;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.widgetMenu {
+  font-size: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  .item {
+    font-size: inherit;
+    line-height: 2em;
+  }
+}
+
+.widget {
+  &:global(.widget_contact) {
+    .widgetMenu {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.footerTop {
+  padding: 124px 0 126px;
+  background-color: $gray500;
+}
+
+.footerBottom {
+  padding: 10px 0;
+}
+
+.copyrightText {
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1;
+}
+
+.paymentList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-inline: -5px;
+  .item {
+    margin-inline: 5px;
+    font-size: 24px;
+    line-height: 1;
+    svg {
+      line-height: 0;
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: map.get($breakpoint, 'lg')) {
+  .widgetMenu {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: map.get($breakpoint, 'md')) {
+  .copyrightText {
+    text-align: center;
+  }
+
+  .paymentList {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

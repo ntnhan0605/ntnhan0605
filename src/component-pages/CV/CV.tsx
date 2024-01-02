@@ -9,7 +9,7 @@ import './fonts.scss'
 const infos: Record<string, React.ReactNode> = {
   'Date of Birth': '06/05/1994',
   Phone: (
-    <Link href="tel:0987 527 544" className={styles.link}>
+    <Link href="tel:0987 527 544" className={styles.link} target="_blank">
       0987 527 544
     </Link>
   ),
@@ -20,7 +20,10 @@ const infos: Record<string, React.ReactNode> = {
   ),
   Hobbies: 'Play Guitar, Reading,...',
   'Linked In': (
-    <Link href="https://www.linkedin.com/in/ntnhan65/" className={styles.link}>
+    <Link
+      href="https://www.linkedin.com/in/ntnhan65/"
+      className={styles.link}
+      target="_blank">
       https://www.linkedin.com/in/ntnhan65/
     </Link>
   ),
@@ -180,7 +183,7 @@ const projectsInZivas: Project[] = [
   },
   {
     name: (
-      <Link href="https://hotel.ueh.edu.vn/vi/">
+      <Link href="https://hotel.ueh.edu.vn/vi/" target="_blank">
         https://hotel.ueh.edu.vn/vi/
       </Link>
     ),
@@ -193,13 +196,15 @@ const projectsInCorsivaLab: Project[] = [
   {
     name: (
       <>
-        <Link href="http://www.kaimay.com.sg/">http://www.kaimay.com.sg/</Link>
+        <Link href="http://www.kaimay.com.sg/" target="_blank">
+          http://www.kaimay.com.sg/
+        </Link>
         <br />
-        <Link href=" https://www.tacamsteel.com/">
+        <Link href=" https://www.tacamsteel.com/" target="_blank">
           https://www.tacamsteel.com/
         </Link>
         <br />
-        <Link href="https://medelabreastfeeding.asia/sg/">
+        <Link href="https://medelabreastfeeding.asia/sg/" target="_blank">
           https://medelabreastfeeding.asia/sg/
         </Link>
       </>
@@ -216,7 +221,7 @@ const projectsInCorsivaLab: Project[] = [
   {
     name: (
       <>
-        <Link href="http://virtualwebdesign.azurewebsites.net/">
+        <Link href="http://virtualwebdesign.azurewebsites.net/" target="_blank">
           http://virtualwebdesign.azurewebsites.net/
         </Link>
       </>
@@ -226,7 +231,7 @@ const projectsInCorsivaLab: Project[] = [
   },
   {
     name: (
-      <Link href="http://payabeachv19.azurewebsites.net/">
+      <Link href="http://payabeachv19.azurewebsites.net/" target="_blank">
         http://payabeachv19.azurewebsites.net/
       </Link>
     ),
@@ -237,7 +242,11 @@ const projectsInCorsivaLab: Project[] = [
 
 const projectsInMunkas: Project[] = [
   {
-    name: <Link href="https://munkas.com/">https://munkas.com/</Link>,
+    name: (
+      <Link href="https://munkas.com/" target="_blank">
+        https://munkas.com/
+      </Link>
+    ),
     size: '1',
     technology: ['HTML, CSS, jQuery', 'Worpress: make theme from Front-end']
   }
@@ -245,7 +254,8 @@ const projectsInMunkas: Project[] = [
 
 export const CV: FC = () => {
   return (
-    <div className={clsx('container-lg', styles.cv)}>
+    <div className={clsx('container-lg', 'cv-body', styles.cv)}>
+      <style>{`.header, .footer {display: none;}`}</style>
       <div className={clsx(styles.container, styles.infos)}>
         <h1 className={styles.name}>NGUYEN THIEN NHAN</h1>
         <div className={styles.divider} />
@@ -269,7 +279,7 @@ export const CV: FC = () => {
             <Link href="/">
               <div className={styles.avatar}>
                 <img
-                  src="/images/avatar.jpg"
+                  src="/images/brand/avatar.jpg"
                   alt="Nguyen Thien Nhan"
                   className={styles.avatarImg}
                 />
