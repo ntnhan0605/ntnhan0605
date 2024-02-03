@@ -1,8 +1,13 @@
+'use client'
+import { Icon } from '@/components/Icon'
+import { IconOutline } from '@/components/Icon/IconOutline/IconOutline'
+import { MenuSocial } from '@/components/Menu'
+import { WidgetFooter } from '@/components/Widget/WidgetFooter'
+import clsx from 'clsx'
+
 import { FC } from 'react'
 import styles from './FooterClient.module.scss'
-import Link from 'next/link'
-import clsx from 'clsx'
-import { Icon } from '@/components/Icon'
+import { useRouter } from 'next/navigation'
 
 const contactMenuItems = [
   { label: '+84 987 527 544', link: 'tel:+84987527544' },
@@ -68,74 +73,64 @@ const paymentItems = [
 ]
 
 export const FooterClient: FC = () => {
+  const router = useRouter()
   return (
     <footer className={clsx(styles.footer, 'footer')}>
       <div className={styles.footerTop}>
         <div className="container">
           <div className="row">
             <div className="col-lg-3 col-md-6">
-              <div className={clsx(styles.widget, 'widgetContact')}>
-                <h3 className={styles.widgetTitle}>CONTACT</h3>
-                <ul className={styles.widgetMenu}>
-                  {contactMenuItems.map((item, index) => {
-                    return (
-                      <li key={`${index}`} className={styles.item}>
-                        <Link href={item.link} className={styles.link}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+              <WidgetFooter
+                title="CONTACT"
+                items={contactMenuItems}
+                className={clsx(styles.widget, 'widgetContact')}
+              />
+              <MenuSocial
+                items={[
+                  {
+                    key: 'facebook',
+                    icon: <IconOutline name="facebook" />,
+                    onClick: () => router.replace('/facebook')
+                  },
+                  {
+                    key: 'instagram',
+                    icon: <IconOutline name="instagram" />,
+                    onClick: () => router.replace('/instagram')
+                  },
+                  {
+                    key: 'twitter',
+                    icon: <IconOutline name="twitter" />,
+                    onClick: () => router.replace('/twitter')
+                  },
+                  {
+                    key: 'youtube',
+                    icon: <IconOutline name="youtube" />,
+                    onClick: () => router.replace('/youtube')
+                  }
+                ]}
+                className={styles.menuSocial}
+              />
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className={styles.widget}>
-                <h3 className={styles.widgetTitle}>HELP</h3>
-                <ul className={styles.widgetMenu}>
-                  {helpMenuItems.map((item, index) => {
-                    return (
-                      <li key={`${index}`} className={styles.item}>
-                        <Link href={item.link} className={styles.link}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+              <WidgetFooter
+                title="HELP"
+                items={helpMenuItems}
+                className={styles.widget}
+              />
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className={styles.widget}>
-                <h3 className={styles.widgetTitle}>ABOUT US</h3>
-                <ul className={styles.widgetMenu}>
-                  {aboutUsMenuItems.map((item, index) => {
-                    return (
-                      <li key={`${index}`} className={styles.item}>
-                        <Link href={item.link} className={styles.link}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+              <WidgetFooter
+                title="ABOUT US"
+                items={aboutUsMenuItems}
+                className={styles.widget}
+              />
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className={styles.widget}>
-                <h3 className={styles.widgetTitle}>CUSTOMER SERVICE</h3>
-                <ul className={styles.widgetMenu}>
-                  {customerServicesMenuItems.map((item, index) => {
-                    return (
-                      <li key={`${index}`} className={styles.item}>
-                        <Link href={item.link} className={styles.link}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+              <WidgetFooter
+                title="CUSTOMER SERVICE"
+                items={customerServicesMenuItems}
+                className={styles.widget}
+              />
             </div>
           </div>
         </div>

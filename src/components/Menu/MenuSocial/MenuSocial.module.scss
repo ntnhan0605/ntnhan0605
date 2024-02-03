@@ -1,6 +1,20 @@
+@import '/src/styles/variables.module.scss';
+
 .list {
   &.horizontal {
     display: flex;
     align-items: center;
+  }
+
+  .item {
+    color: $grey700;
+    transition: 0.25s linear all;
+    &:hover {
+      color: $grey900;
+    }
+
+    + .item {
+      margin-left: 10px;
+    }
   }
 }

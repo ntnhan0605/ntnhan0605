@@ -1,1 +1,50 @@
-.icon
+@import '/src/styles/variables.module.scss';
+
+.svgCircle {
+  position: absolute;
+  color: currentColor;
+  fill: none;
+  stroke: $grey500;
+  font-size: 34px;
+  transition: all 0.8s cubic-bezier(0.14, 0.57, 0.14, 1.03);
+  circle {
+    stroke-width: 1;
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    transform-origin: center;
+    transform: rotate(-145deg);
+    transition: all 1s cubic-bezier(0.43, 0.41, 0.36, 0.9);
+  }
+}
+
+.icon {
+  color: inherit;
+  fill: currentColor;
+  font-size: inherit;
+  width: 1em;
+  height: 1em;
+  line-height: 0;
+}
+
+.iconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid $grey500;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    .svgCircle {
+      transition: all 1s cubic-bezier(0.43, 0.41, 0.36, 0.9);
+      circle {
+        stroke: $grey900;
+        stroke-dashoffset: 0;
+        transform: rotate(55deg);
+        transition: all 1s cubic-bezier(0.43, 0.41, 0.36, 0.9);
+      }
+    }
+  }
+}

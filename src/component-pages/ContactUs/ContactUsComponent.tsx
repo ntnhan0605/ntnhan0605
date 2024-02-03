@@ -58,6 +58,7 @@ export const ContactUsComponent: FC<ContactUsComponentProps> = () => {
                   </div>
                 </div>
               </div>
+              <div className={styles.iconsContainer}></div>
             </div>
             <div className="col-lg-6">
               <FormContactUs />
