@@ -1,5 +1,5 @@
 import { ContactUsComponent } from './ContactUsComponent'
 
-export const ContactUsContainer = async () => {
+export const ContactUsContainer = () => {
   return <ContactUsComponent />
 }
