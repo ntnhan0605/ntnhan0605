@@ -1,0 +1,15 @@
+.label {
+  @apply text-xs font-JosefinSans font-normal;
+}
+
+.icon {
+  @apply text-base w-[16px] h-[18px] text-[#000000];
+}
+
+.item {
+  @apply flex gap-1 items-center cursor-pointer;
+}
+
+.list {
+  @apply flex gap-5 justify-end p-0 m-0 list-none;
+}

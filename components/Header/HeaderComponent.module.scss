@@ -1,0 +1,41 @@
+.headerTop {
+  border-bottom: 1px solid;
+  @apply leading-4 py-2 text-[0.9em] text-sm text-PhilipineGray border-Gainsboro;
+
+  .headerTopMenu {
+    @apply p-0 m-0 list-none inline-flex gap-6 text-inherit;
+  }
+
+  .headerTopRow {
+    @apply flex;
+    .headerTopCol {
+      @apply flex-1 min-w-0 text-inherit;
+      + .headerTopCol {
+        @apply text-right;
+      }
+    }
+  }
+
+  @apply max-md:hidden;
+}
+
+.headerCenterRow {
+  @apply flex justify-between;
+  .headerCenterCol1 {
+    @apply w-1/5 max-w-[150px];
+  }
+  .headerCenterCol2 {
+    @apply flex-1 min-w-0 flex justify-center;
+  }
+}
+
+.headerMiddle {
+  @apply pt-7 pb-3;
+  .headerCenterRow {
+    align-items: center;
+  }
+}
+
+.headerBottom {
+  @apply sticky top-0;
+}

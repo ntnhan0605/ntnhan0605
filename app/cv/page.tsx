@@ -1,4 +1,4 @@
-import { CVComponent } from '@/component-pages/CV';
+import { CV } from '@/component-pages/CV';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,5 +7,10 @@ export const metadata: Metadata = {
   icons: '/favicon.svg',
 };
 export default function CVPage() {
-  return <CVComponent />;
+  return (
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `.header,.footer {display: none}` }} />
+      <CV />
+    </>
+  );
 }

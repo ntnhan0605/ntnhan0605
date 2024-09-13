@@ -1,1 +1,1 @@
-export * from './CVComponent';
+export * from './CV';

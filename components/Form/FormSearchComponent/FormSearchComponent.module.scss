@@ -1,0 +1,14 @@
+.container {
+  --FormSearch-preffix: 25px;
+  @apply inline-block w-full align-top relative;
+  @apply after:block after:h-[1px] after:bg-Gainsboro after:absolute after:bottom-[4px] after:left-[var(--FormSearch-preffix)];
+  &:after {
+    width: calc(100% - var(--FormSearch-preffix));
+  }
+  .submit {
+    @apply block w-[19px] absolute top-[4px] left-0 text-[15px] text-EerieBlack;
+  }
+  .input {
+    @apply pl-[25px] align-top uppercase;
+  }
+}

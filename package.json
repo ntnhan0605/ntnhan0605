@@ -3,22 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=8000 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "npx prettier \"./**/*.{ts,tsx}\" --write",
     "lint:fix": "npx eslint \"./**/*.{ts,tsx}\" --fix",
-		"check": "npx prettier \"./**/*.{ts,tsx}\" --check",
-    "prepare": "husky"
+    "check": "npx prettier \"./**/*.{ts,tsx}\" --check",
+    "prepare": "husky",
+    "icons-generate": "node scripts/icons-generate.js"
   },
   "dependencies": {
+    "@ntnhan0605/hhg-workflow": "^1.0.9",
     "clsx": "^2.1.0",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-prettier": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -30,6 +35,10 @@
     "husky": "^9.0.11",
     "postcss": "^8",
     "prettier": "^3.2.5",
+    "sass": "^1.74.1",
+    "stylelint": "^16.3.1",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
