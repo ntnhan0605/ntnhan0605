@@ -1,3 +1,10 @@
+import { HomeCarouselComponent } from '@/components/HomeCarouselComponent';
+
 export const HomeComponent = () => {
-  return <p>Home</p>;
+  return (
+    <>
+      {/* Home Carousel */}
+      <HomeCarouselComponent />
+    </>
+  );
 };

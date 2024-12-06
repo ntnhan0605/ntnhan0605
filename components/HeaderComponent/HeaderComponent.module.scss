@@ -1,0 +1,127 @@
+@import '../../styles/mixin';
+.headerDiscount {
+  @apply text-sm text-PhilipineGray;
+}
+
+.headerDiscountMenu {
+  @apply justify-end gap-6;
+  :global(.menuItem--label) {
+    @apply m-0;
+    @apply font-Open_Sans text-PhilipineGray text-sm;
+
+    &:global(::before) {
+      @apply hidden;
+    }
+  }
+
+  :global(.menuItem) {
+    @apply p-0;
+  }
+}
+
+.headerDiscountWrapper {
+  @apply border-0 border-b border-solid border-Gainsboro;
+  @apply py-2 flex items-center justify-between leading-none;
+  @apply max-sm:hidden;
+}
+
+.headerSearchInput {
+  @apply max-w-[150px];
+}
+
+.headerSearch {
+  @apply flex-1;
+  @apply max-lg:hidden;
+}
+
+.headerLogo {
+  @apply flex-1;
+  .headerLogoWrapper {
+    > img {
+      @apply max-lg:object-left;
+    }
+  }
+}
+
+.headerNavAction {
+  @apply flex-1;
+  @apply flex gap-5 justify-end;
+
+  .headerNavUser,
+  .headerNavFav {
+    @apply max-lg:hidden;
+  }
+}
+
+.headerNavBurger {
+  /* Responsive */
+  @apply hidden max-lg:block;
+  :global(.buttonIcon--icon) {
+    @apply text-2xl;
+  }
+}
+
+.headerMainMenu {
+  /* Responsive */
+  @apply max-lg:block max-lg:w-full;
+
+  :global(.subMenu) {
+    @apply max-lg:left-[unset] max-lg:top-[unset] max-lg:origin-top max-lg:border-0;
+  }
+
+  :global(.menuItem:has(.menuItem.menuItemActive)) {
+    :global(.subMenu) {
+      @apply max-lg:relative max-lg:rotate-0;
+    }
+  }
+  :global(.menuItem) {
+    &:hover {
+      :global(.subMenu) {
+        @apply max-lg:relative;
+      }
+    }
+  }
+}
+
+.headerNavMenu {
+  @apply w-full flex justify-center;
+  /* Responsive */
+  @apply max-lg:block;
+}
+
+.headerMenu {
+  @include scrollbar;
+  @apply bg-white;
+
+  /* Responsive */
+  @apply max-lg:h-[calc(100vh-120px)];
+  @apply max-lg:overflow-auto max-lg:w-full;
+  @apply max-lg:absolute max-lg:z-[-1] max-lg:left-0 max-lg:right-0 max-lg:top-full;
+  @apply max-lg:border-0 max-lg:border-b max-lg:border-solid max-lg:border-Gainsboro;
+}
+
+.headerWrapper {
+  @apply flex flex-wrap items-center;
+}
+
+.headerContent {
+  @apply pt-6;
+  @apply max-lg:py-4;
+}
+
+.header {
+  @apply sticky z-10 top-0 left-0 right-0 bg-white;
+}
+
+@media not all and (screen(lg)) {
+  .headerMenu {
+    transform: rotateX(90deg);
+    @apply origin-top;
+    @apply transition-transform duration-300;
+
+    &.headerMenuOpen {
+      transform: rotateX(0deg);
+      @apply transition-transform duration-300;
+    }
+  }
+}

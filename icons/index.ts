@@ -1,7 +1,8 @@
 // 🔴 DO NOT EDIT — This file is generated.
-import Cart from './Cart';
-import Heart from './Heart';
-import Search from './Search';
-import User from './User';
+import BurgerSvg from './BurgerSvg';
+import CartSvg from './CartSvg';
+import HeartSvg from './HeartSvg';
+import SearchSvg from './SearchSvg';
+import UserSvg from './UserSvg';
 
-export { Cart, Heart, Search, User };
+export { BurgerSvg, CartSvg, HeartSvg, SearchSvg, UserSvg };

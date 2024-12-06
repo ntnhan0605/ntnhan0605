@@ -115,13 +115,17 @@ const projectsInHHG: Project[] = [
       <>
         Build package to NPM:
         <br />
-        <a href="https://www.npmjs.com/package/@ntnhan0605/hhg-workflow" target="_blank">
+        <a
+          href="https://www.npmjs.com/package/@ntnhan0605/hhg-workflow"
+          target="_blank"
+          rel="noreferrer"
+        >
           https://www.npmjs.com/package/@ntnhan0605/hhg-workflow
         </a>
         <br />
         Work with vitejs for launching preview web:
         <br />
-        <a href="https://hhg-workflow.vercel.app/" target="_blank">
+        <a href="https://hhg-workflow.vercel.app/" target="_blank" rel="noreferrer">
           https://hhg-workflow.vercel.app/
         </a>
         <br />
@@ -293,7 +297,6 @@ export const CV: FC = () => {
             <div className={styles.infoRight}>
               <Link href="/">
                 <div className={styles.avatar}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={avatarSrc.src} alt="Nguyen Thien Nhan" className={styles.avatarImg} />
                 </div>
               </Link>

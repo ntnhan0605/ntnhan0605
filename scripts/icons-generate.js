@@ -8,13 +8,14 @@ const componentsAtomsPath = path.join(__dirname, '../');
 const componentsAtomsIconsPath = `${componentsAtomsPath}/icons`;
 const exportAtomsIconsPath = `${componentsAtomsIconsPath}/index.ts`;
 const componentTemplate = `${prefix}{componentContent}`;
-const componentImportTenplate = `import {componentName} from './{componentName}'\n`;
+const componentImportTemplate = `import {componentName} from './{componentName}'\n`;
 
 async function exists(file) {
   try {
     await fs.stat(file);
     return true;
-  } catch (err) {
+  } catch (err: any) {
+		console.log('** RYAN icons-generate.js 18 err : ', err)
     return false;
   }
 }
@@ -51,7 +52,7 @@ async function loadIconsPath() {
 
   const files = (await fs.readdir(svgPath)).filter((name) => /svg$/.test(name));
   for (const file of files) {
-    const componentName = generateComponentName(file);
+    const componentName = `${generateComponentName(file)}Svg`;
     const componentFile = `${componentsAtomsIconsPath}/${componentName}.tsx`;
 
     const contentFile = await fs.readFile(`${svgPath}/${file}`);
@@ -63,7 +64,7 @@ async function loadIconsPath() {
 
   let indexContent = `${prefix}`;
   compArr.forEach((compName) => {
-    indexContent += componentImportTenplate.replaceAll(`{componentName}`, compName);
+    indexContent += componentImportTemplate.replaceAll(`{componentName}`, compName);
   });
   indexContent += '\n';
   indexContent += `export {${compArr.join(',\n')}}`;

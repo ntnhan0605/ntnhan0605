@@ -1,4 +1,4 @@
-import React, { SVGProps, JSX } from 'react';
+import React, { JSX, SVGProps } from 'react';
 
 export type IconComponent =
   | React.ComponentType<React.SVGProps<SVGSVGElement>>

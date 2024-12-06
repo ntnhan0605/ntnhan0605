@@ -1,0 +1,73 @@
+.menuItemLabel {
+  @apply relative;
+  @apply inline-block my-5 cursor-pointer;
+  @apply font-Josefin_Sans font-normal text-xs leading-none;
+  @apply transition-colors duration-75 ease-linear;
+
+  @apply before:content-[''] before:block before:w-0 before:h-[1px] before:bg-EerieBlack;
+  @apply before:absolute before:-bottom-[1px] before:right-0;
+  @apply before:transition-all before:duration-300;
+
+  &:hover {
+    @apply before:w-full;
+    @apply before:left-0;
+    @apply before:transition-all before:duration-300;
+  }
+}
+
+.menuItemHasChildren {
+  @apply relative;
+}
+
+.subMenu {
+  @apply py-2;
+  @apply absolute -left-7 min-w-64 pointer-events-none;
+  @apply bg-white;
+  @apply border border-solid border-AntiFlashWhite;
+  @apply origin-top transition-transform duration-300;
+  transform: rotateX(90deg);
+  .menuItemLabel {
+    @apply my-2;
+    @apply font-EB_Garamond italic text-SilverFoil text-base leading-none;
+
+    &:hover {
+      @apply text-EerieBlack;
+    }
+  }
+
+  > .menuItem {
+    @apply px-4;
+    &.menuItemActive {
+      .menuItemLabel {
+        @apply text-EerieBlack;
+      }
+    }
+  }
+}
+
+.menuItem {
+  @apply block;
+  @apply text-EerieBlack leading-none;
+
+  &.menuItemActive {
+    > .menuItemWrapper {
+      .menuItemLabel {
+        @apply before:w-full;
+      }
+    }
+  }
+
+  &:hover {
+    > .subMenu {
+      @apply pointer-events-auto;
+      transform: rotateX(0deg);
+    }
+  }
+}
+
+.menu {
+  @apply flex gap-14;
+  &.subMenu {
+    @apply block;
+  }
+}
