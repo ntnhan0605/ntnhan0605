@@ -1,6 +1,6 @@
 import HeartSvg from '@/icons/HeartSvg';
 // import styles from './WishlistMiniComponent.module.scss';
-import { ButtonIconComponent } from '../ButtonIconComponent';
+import { ButtonComponent } from '../ButtonComponent';
 import { CSSProperties } from 'react';
 
 export type FavMiniComponentProps = {
@@ -8,12 +8,18 @@ export type FavMiniComponentProps = {
   style?: CSSProperties;
 };
 
-export const FavMiniComponent = (props: FavMiniComponentProps) => {
+export const WishlistMiniComponent = (props: FavMiniComponentProps) => {
   const { className, style } = props;
 
   return (
-    <ButtonIconComponent icon={HeartSvg} className={className} style={style}>
+    <ButtonComponent
+      href="asdfasdf"
+      icon={HeartSvg}
+      variant="link"
+      className={className}
+      style={style}
+    >
       0
-    </ButtonIconComponent>
+    </ButtonComponent>
   );
 };

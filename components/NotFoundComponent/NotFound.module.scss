@@ -1,0 +1,9 @@
+.notFound {
+  :global(.EmptyComponent--title) {
+    @apply uppercase max-md:text-2xl;
+  }
+
+  :global(.EmptyComponent--description) {
+    @apply lg:w-1/2 mx-auto;
+  }
+}

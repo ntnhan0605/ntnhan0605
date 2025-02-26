@@ -1,7 +1,7 @@
 import UserSvg from '@/icons/UserSvg';
 // import styles from './UserMiniComponent.module.scss';
 import { CSSProperties } from 'react';
-import { ButtonIconComponent } from '../ButtonIconComponent';
+import { ButtonComponent } from '../ButtonComponent';
 
 export type UserMiniComponentProps = {
   className?: string;
@@ -9,5 +9,5 @@ export type UserMiniComponentProps = {
 };
 export const UserMiniComponent = (props: UserMiniComponentProps) => {
   const { className, style } = props;
-  return <ButtonIconComponent icon={UserSvg} className={className} style={style} />;
+  return <ButtonComponent icon={UserSvg} variant="link" className={className} style={style} />;
 };

@@ -31,13 +31,11 @@ const config: Config = {
         Josefin_Sans: 'var(--font-josefin-sans)',
         EB_Garamond: 'var(--font-eb-garamond)',
       },
+      transitionTimingFunction: {
+        'btn-line': 'cubic-bezier(0.51,0.49,0.45,0.9)',
+      },
       colors: {
         ...themeExtends.colors,
-        PhilipineGray: '#8b8b8b',
-        AntiFlashWhite: '#f4f2f2',
-        Gainsboro: '#dddddd',
-        SilverFoil: '#aeaeae ',
-        EerieBlack: '#1d1d1d',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

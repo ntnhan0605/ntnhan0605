@@ -3,13 +3,13 @@ import { BurgerSvg } from '@/icons';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import { CSSProperties, useEffect, useState } from 'react';
-import { ButtonIconComponent } from '../ButtonIconComponent';
+import { ButtonComponent } from '../ButtonComponent';
 import { CartMiniComponent } from '../CartMiniComponent';
 import { InputSearchComponent } from '../InputSearchComponent';
 import { LogoComponent } from '../LogoComponent';
 import { MenuComponent, MenuItem } from '../MenuComponent';
 import { UserMiniComponent } from '../UserMiniComponent';
-import { FavMiniComponent } from '../WishlistMiniComponent';
+import { WishlistMiniComponent } from '../WishlistMiniComponent';
 
 import styles from './HeaderComponent.module.scss';
 
@@ -38,8 +38,8 @@ export const HeaderComponent = (props: HeaderComponentProps) => {
         key: '/#home',
         label: 'HOME',
         children: [
-          { key: '/main-home', label: 'Main Home' },
-          { key: '/main-home-1', label: 'Main Home 1' },
+          { key: '/main-home-1-1', label: 'Main Home' },
+          { key: '/main-home-1-2', label: 'Main Home 1' },
         ],
       },
       { key: '/pages', label: 'PAGES' },
@@ -81,9 +81,9 @@ export const HeaderComponent = (props: HeaderComponentProps) => {
             </div>
             <div className={styles.headerNavAction}>
               <UserMiniComponent className={styles.headerNavUser} />
-              <FavMiniComponent className={styles.headerNavFav} />
+              <WishlistMiniComponent className={styles.headerNavFav} />
               <CartMiniComponent className={styles.headerNavCart} />
-              <ButtonIconComponent
+              <ButtonComponent
                 icon={BurgerSvg}
                 className={styles.headerNavBurger}
                 onClick={() => setOpenHeaderMenu(!openHeaderMenu)}

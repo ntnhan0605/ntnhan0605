@@ -1,3 +1,4 @@
+import { FooterComponent } from '@/components/FooterComponent';
 import { HeaderComponent } from '@/components/HeaderComponent';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
@@ -19,6 +20,7 @@ const JosefinSansFont = Josefin_Sans({
 const EBGaramond = EB_Garamond({
   subsets: ['vietnamese', 'latin', 'latin-ext'],
   variable: '--font-eb-garamond',
+  style: ['normal', 'italic'],
   weight: ['400'],
 });
 
@@ -40,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       >
         <HeaderComponent />
         <main>{children}</main>
+        <FooterComponent />
       </body>
     </html>
   );

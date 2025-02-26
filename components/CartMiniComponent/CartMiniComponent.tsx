@@ -1,6 +1,6 @@
 import CartSvg from '@/icons/CartSvg';
 // import styles from './CartMiniComponent.module.scss';
-import { ButtonIconComponent } from '../ButtonIconComponent';
+import { ButtonComponent } from '../ButtonComponent';
 import { CSSProperties } from 'react';
 
 export type CartMiniComponentProps = {
@@ -12,8 +12,8 @@ export const CartMiniComponent = (props: CartMiniComponentProps) => {
   const { className, style } = props;
 
   return (
-    <ButtonIconComponent icon={CartSvg} className={className} style={style}>
+    <ButtonComponent icon={CartSvg} variant="link" className={className} style={style}>
       0
-    </ButtonIconComponent>
+    </ButtonComponent>
   );
 };

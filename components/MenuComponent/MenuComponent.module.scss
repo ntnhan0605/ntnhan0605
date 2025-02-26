@@ -4,7 +4,7 @@
   @apply font-Josefin_Sans font-normal text-xs leading-none;
   @apply transition-colors duration-75 ease-linear;
 
-  @apply before:content-[''] before:block before:w-0 before:h-[1px] before:bg-EerieBlack;
+  @apply before:content-[''] before:block before:w-0 before:h-[1px] before:bg-gray800;
   @apply before:absolute before:-bottom-[1px] before:right-0;
   @apply before:transition-all before:duration-300;
 
@@ -23,15 +23,15 @@
   @apply py-2;
   @apply absolute -left-7 min-w-64 pointer-events-none;
   @apply bg-white;
-  @apply border border-solid border-AntiFlashWhite;
+  @apply border border-solid border-gray100;
   @apply origin-top transition-transform duration-300;
   transform: rotateX(90deg);
   .menuItemLabel {
     @apply my-2;
-    @apply font-EB_Garamond italic text-SilverFoil text-base leading-none;
+    @apply font-EB_Garamond italic text-gray300 text-base leading-none;
 
     &:hover {
-      @apply text-EerieBlack;
+      @apply text-gray800;
     }
   }
 
@@ -39,7 +39,7 @@
     @apply px-4;
     &.menuItemActive {
       .menuItemLabel {
-        @apply text-EerieBlack;
+        @apply text-gray800;
       }
     }
   }
@@ -47,7 +47,7 @@
 
 .menuItem {
   @apply block;
-  @apply text-EerieBlack leading-none;
+  @apply text-gray800 leading-none;
 
   &.menuItemActive {
     > .menuItemWrapper {

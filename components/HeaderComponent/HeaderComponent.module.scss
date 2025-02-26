@@ -1,13 +1,13 @@
 @import '../../styles/mixin';
 .headerDiscount {
-  @apply text-sm text-PhilipineGray;
+  @apply text-sm text-gray400;
 }
 
 .headerDiscountMenu {
   @apply justify-end gap-6;
   :global(.menuItem--label) {
     @apply m-0;
-    @apply font-Open_Sans text-PhilipineGray text-sm;
+    @apply font-Open_Sans text-gray400 text-sm;
 
     &:global(::before) {
       @apply hidden;
@@ -20,7 +20,7 @@
 }
 
 .headerDiscountWrapper {
-  @apply border-0 border-b border-solid border-Gainsboro;
+  @apply border-0 border-b border-solid border-gray200;
   @apply py-2 flex items-center justify-between leading-none;
   @apply max-sm:hidden;
 }
@@ -97,7 +97,7 @@
   @apply max-lg:h-[calc(100vh-120px)];
   @apply max-lg:overflow-auto max-lg:w-full;
   @apply max-lg:absolute max-lg:z-[-1] max-lg:left-0 max-lg:right-0 max-lg:top-full;
-  @apply max-lg:border-0 max-lg:border-b max-lg:border-solid max-lg:border-Gainsboro;
+  @apply max-lg:border-0 max-lg:border-b max-lg:border-solid max-lg:border-gray200;
 }
 
 .headerWrapper {

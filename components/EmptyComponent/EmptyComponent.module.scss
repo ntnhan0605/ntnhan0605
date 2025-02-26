@@ -1,0 +1,15 @@
+.container {
+  @apply pt-40 px-[10%] pb-64 lg:px-36 text-center;
+}
+
+.title {
+  @apply text-gray800 font-Josefin_Sans font-semibold text-[40px] leading-[1.33] tracking-[0.23em];
+}
+
+.description {
+  @apply mt-4 text-gray400 text-[15px] leading-[1.8];
+}
+
+.inner {
+  @apply mt-10;
+}

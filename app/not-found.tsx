@@ -1,5 +1,5 @@
-import { EmptyComponent } from '@/components/EmptyComponent';
+import { NotFoundComponent } from '@/components/NotFoundComponent';
 
 export default function RootNotFound() {
-  return <EmptyComponent title="404" description="This page is no longer" />;
+  return <NotFoundComponent />;
 }
