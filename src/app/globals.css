@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-gray400 font-Open_Sans text-base leading-6;
+}
+
+::selection {
+  @apply bg-gray800 text-white;
+}
+
+::-moz-selection {
+  @apply bg-gray800 text-white;
+}

@@ -1,0 +1,10 @@
+.button {
+  @apply p-0 font-Josefin_Sans font-normal !not-italic text-[11px] tracking-[0.25em] uppercase;
+  :global(.ButtonComponent_icon) {
+    @apply text-[16px];
+
+    + :global(.ButtonComponent_text) {
+      @apply ml-1;
+    }
+  }
+}

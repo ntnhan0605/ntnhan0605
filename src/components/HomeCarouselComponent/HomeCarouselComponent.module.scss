@@ -1,0 +1,43 @@
+.homeSliderContainer {
+  @apply relative;
+}
+
+.homeSlider {
+  --home-slider-height: 783px;
+  @apply relative overflow-hidden;
+  @apply w-full h-[var(--home-slider-height,783px)];
+  @apply flex items-center justify-center;
+}
+
+.homeSliderBgImg {
+  @apply absolute inset-0 -z-[1] pointer-events-none w-full h-full object-cover object-center;
+}
+
+.homeSliderContent {
+}
+
+.swiperNavigation {
+  @apply absolute top-1/2 inset-x-5 -translate-y-1/2 z-10;
+  @apply flex justify-between;
+  @apply pointer-events-none;
+}
+
+.swiperNavigationBtn {
+  @apply cursor-pointer pointer-events-auto;
+  @apply hidden items-center justify-center lg:flex lg:w-10 lg:h-10;
+  @apply text-4xl text-white;
+
+  &:global(.homeSliderNext) {
+    @apply -scale-x-100;
+  }
+}
+
+.swiperPagination {
+  --swiper-color: #fff;
+  @apply absolute bottom-2 left-1/2 -translate-x-1/2;
+}
+
+.swiperBullet {
+  @apply w-10 h-10;
+  @apply after:content-[''] after:block after:bg-[var(--swiper-color)] after:w-[6px] after:h-[6px] after:rotate-45;
+}
