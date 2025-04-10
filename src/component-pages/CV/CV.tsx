@@ -202,7 +202,7 @@ const projects: Record<string, Project[]> = {
       size: 2,
       detail: [
         'Developed responsive WordPress themes with pixel-perfect precision from Adobe XD designs.',
-        'Technical used in projects: HTML, CSS, JS, jQuery, Swiper, Bootstrap, Wordpress, TypeRocket, Advanced Custom Field (ACF).',
+        'Technical used in projects: HTML, CSS, JS, jQuery, Swiper, Bootstrap, Wordpress, WPML, TypeRocket, Advanced Custom Field (ACF).',
       ],
     },
   ],
@@ -259,7 +259,7 @@ const ProjectSection = ({ title, projects }: { title: string; projects: Project[
       return <p dangerouslySetInnerHTML={{ __html: name }} />;
     }
     if (Array.isArray(name)) {
-      return name.map((n) => <ProjectName name={n} />);
+      return name.map((n, index) => <ProjectName key={`${n}-${index}`} name={n} />);
     }
     return null;
   };
@@ -270,9 +270,9 @@ const ProjectSection = ({ title, projects }: { title: string; projects: Project[
       <table className={clsx(styles.table, styles.bordered)}>
         <tbody>
           <tr>
-            <th className={styles.head25}>App/Tool Name</th>
-            <th>Team size</th>
-            <th className={styles.head70}>Detail</th>
+            <th className={styles.head30}>App/Tool Name</th>
+            <th className={styles.head10}>Team size</th>
+            <th className={styles.head60}>Detail</th>
           </tr>
           {projects.map((project, index) => {
             const { name, size, detail, note } = project;
@@ -448,9 +448,9 @@ export const CV: FC = () => {
         <div className={clsx(styles.container, styles.projects)}>
           <h2 className={styles.title}>PROJECTS</h2>
           <div className={styles.divider} />
-          {Object.keys(projects).map((title) => {
+          {Object.keys(projects).map((title, index) => {
             const prjs = projects[title as keyof typeof projects];
-            return <ProjectSection title={title} projects={prjs} />;
+            return <ProjectSection key={`${index}`} title={title} projects={prjs} />;
           })}
         </div>
       </div>
