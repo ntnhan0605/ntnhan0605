@@ -108,6 +108,19 @@
       + li {
         margin-top: 4px;
       }
+
+      .list {
+        padding-left: 20px;
+        li {
+          &:before {
+            content: '•';
+            margin-right: 14px;
+            font-size: 30px;
+            line-height: 1;
+            vertical-align: -5px;
+          }
+        }
+      }
     }
   }
 
@@ -145,6 +158,12 @@
       margin-bottom: 0.4rem;
     }
 
+    .head20 {
+      width: 20%;
+    }
+    .head25 {
+      width: 25%;
+    }
     .head30 {
       width: 30%;
     }
@@ -159,6 +178,9 @@
     }
     .head60 {
       width: 60%;
+    }
+    .head70 {
+      width: 70%;
     }
 
     .note {

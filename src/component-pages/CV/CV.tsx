@@ -28,13 +28,13 @@ const infos: Record<string, ReactNode> = {
       ntnhan0605@gmail.com
     </Link>
   ),
-  Hobbies: 'Play Guitar, Reading,...',
   'Linked In': (
     <Link href="https://www.linkedin.com/in/ntnhan65/" className={styles.link} target="_blank">
       https://www.linkedin.com/in/ntnhan65/
     </Link>
   ),
-  Address: '74/25/5C (Alley 242/23/17) An Duong Vuong Street, Ward 16, District 8',
+  Address:
+    '74/25/5C (Alley 242/23/17) An Duong Vuong Street, Ward 16, District 8, Ho Chi Minh City',
 };
 
 const objectives: string[] = [
@@ -100,250 +100,226 @@ const workExperiences: Record<string, { company: string; position: string; list:
 
 const skills: Record<string, string[]> = {
   'Technical skills': [
-    'Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript',
+    'Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript, PHP',
     'Frameworks: React, Next.js, Vue.js',
     'Library: MUI, AntDesign, Redux, Zustand, jQuery, Bootstrap',
-    'Styling: Tailwind CSS, Sass, Bootstrap, CSS Modules',
+    'Styling: TailwindCSS, Sass, Bootstrap, CSS Modules, CSS-in-JS',
     'Tools: Git, Webpack, Vite, npm',
     'Others: REST APIs, gRPC, Responsive Design, Figma, Agile/Scrum, Docker, Redis, experience with Ory Hydra',
   ],
   'Soft skills': [
-    'Teamwork and independent working',
-    'Optimistic, open-minded, critical thinking and self-aware',
-    'Stay calm and work well under pressure',
-    'Planning and time management skills',
+    'Capable of working effectively both in collaborative team environments and independently.',
+    'Optimistic and open-minded with strong critical thinking skills and a high level of self-awareness.',
+    'Maintain composure and efficiency in high-pressure situations.',
+    'Strong planning and time management skills to prioritize tasks and meet deadlines efficiently.',
   ],
 };
 
 type Project = {
-  size: string;
-  technology: string[];
-  name?: ReactNode;
-  position?: string;
-  description?: ReactNode;
+  name: string[] | string;
+  size: number;
+  detail: Array<string | Record<string, string[]>>;
+  note?: string;
 };
-const projectsInHHG: Project[] = [
-  // HHG WORKFLOW
-  {
-    name: 'HHG Workflow',
-    size: '5',
-    technology: [
-      'Technial used in projects: reactjs, reactflow, antd, zustand, d3-hierarchy, vitejs, npm',
-      'Format: typescript, eslint, prettier',
-    ],
-    description: (
-      <>
-        <p>
-          Built admin dashboards and internal tools to streamline and automate email, web push, app
-          push, SMS, Facebook Conversions, and Facebook Ads workflows.
-        </p>
-        <p>
-          Built and packaged component workflows into&nbsp;
-          <a
-            href="https://www.npmjs.com/package/@ntnhan0605/hhg-workflow"
-            target="_blank"
-            rel="noreferrer"
-          >
-            NPM Package
-          </a>
-        </p>
-        <p>
-          Experienced in using Vite.js and vercal to develop and&nbsp;
-          <a href="https://hhg-workflow.vercel.app/" target="_blank" rel="noreferrer">
-            preview websites
-          </a>
-          &nbsp; with optimized performance.
-        </p>
-      </>
-    ),
-  },
-  // SIDIS
-  {
-    name: 'SIDIS',
-    size: '7',
-    technology: [
-      'Technial used in projects: reactjs, antd, tailwindcss, reactflow, muuri, recharts, highcharts, docker, npm',
-      'Format: typescript, eslint, prettier',
-    ],
-    description: (
-      <>
-        <p>Built admin dashboard and internal tools to segment users from big data.</p>
-        <p>
-          Built dashboard and internal tools to set up campaign automate sending email, web push,
-          app push, SMS, WhatsApp and Zalo.
-        </p>
-        <p>
-          Integrated backend APIs to display dynamic analytics charts within the admin dashboard.
-        </p>
-      </>
-    ),
-  },
-  // HEALTH TOOLS, LEAD TOOLS
-  {
-    name: 'Health tools, Lead tools',
-    size: '6',
-    technology: [
-      'Technical used in projects: reactjs, vuejs, nextjs',
-      'Format: typescript, eslint, prettier',
-    ],
-    description: (
-      <>
-        <p>
-          Worked alongside UX designers to accurately implement Figma designs in building
-          user-facing tools.
-        </p>
-        <p>Built dashboards and internal tools to set up condition show/hide tools.</p>
-        <p>Integrated backend APIs to collect data form & tracking from health/lead tools.</p>
-      </>
-    ),
-  },
-  // SUBOT/RISK SCREENER
-  {
-    name: 'SUBOT/Risk screener',
-    size: '4',
-    technology: [
-      'Technial used in projects: reactjs, reactflow, antd, docker',
-      'Format: typescript, eslint, prettier',
-    ],
-    description: (
-      <>
-        <p>
-          Translated Figma-based UI/UX designs into pixel-perfect components while collaborating
-          with the design team.
-        </p>
-        <p>
-          Engineered internal systems and dashboards to configure bots for each URL and control
-          question visibility based on user selection.
-        </p>
-      </>
-    ),
-  },
-];
+const projects: Record<string, Project[]> = {
+  '* Project in Hello Health Group': [
+    // HHG WORKFLOW
+    {
+      name: ['HHG Workflow'],
+      size: 5,
+      detail: [
+        'Built internal tools featuring node-based editors and interactive diagrams by ReactFlow, D3-Hierarchy, Zustand and AntD to streamline and automate workflows for email, web push, app push, SMS, Facebook Conversions, and Facebook Ads.',
+        'Built and packaged component workflows into&nbsp;<a href="https://www.npmjs.com/package/@ntnhan0605/hhg-workflow" target="_blank" rel="noreferrer">NPM Package</a>',
+        'Experienced in using Vite.js and vercal to develop and <a href="https://hhg-workflow.vercel.app/" target="_blank" rel="noreferrer">preview websites</a> with optimized performance.',
+        'Technial used in projects: ReactJS, ReactFlow, AntD, Zustand, D3-Hierarchy, npm, Typescript, Vitejs, ESlint, Prettier',
+      ],
+    },
+    // SIDIS
+    {
+      name: ['SIDIS'],
+      size: 7,
+      detail: [
+        {
+          'Built admin dashboard and internal tools: ': [
+            'Segmented users from large-scale datasets to enable targeted marketing and personalization.',
+            'Set up automated campaigns for multi-channel messaging, including email, web push, app push, SMS, WhatsApp, and Zalo.',
+            'Developed a dynamic dashboard using Muuri and Highcharts, allowing users to rearrange analytics widgets via drag-and-drop.',
+          ],
+        },
+        'Technial used in projects: ReactJS, AntD, TailwindCSS, Muuri, ReactFlow, Recharts, Highcharts, Docker, npm, Typescript, ESlint, Prettier',
+      ],
+    },
+    // HEALTH TOOLS, LEAD TOOLS
+    {
+      name: ['Health tools, Lead tools'],
+      size: 6,
+      detail: [
+        {
+          'Maintain and develop feature of internal tools:': [
+            'Used Vue.js to configure campaigns that dynamically show or hide lead capture tools based on target URLs.',
+            'Worked alongside UX designers to accurately implement Figma designs in building user-facing tools.',
+            'Integrated backend APIs to collect data form & tracking from health/lead tools.',
+          ],
+        },
+        'Technical used in projects: ReactJS, Vue.js, NextJS, Typescript, ESlint, Prettier.',
+      ],
+    },
+    // SUBOT/RISK SCREENER
+    {
+      name: ['SUBOT/Risk screener'],
+      size: 4,
+      detail: [
+        {
+          'Built admin dashboard and internal tools: ': [
+            'Used ReactFlow, AntD to engineered internal systems and dashboards to configure bots for each URL and control question visibility based on user selection.',
+            'Translated Figma-based UI/UX designs into pixel-perfect components while collaborating with the design team.',
+          ],
+        },
+        'Technial used in projects: ReactJS, ReactFlow, AntD, Docker, Typescript, ESlint, Prettier.',
+      ],
+    },
+  ],
+  '* Projects in Zivas': [
+    // CRM Phu Hoang Land
+    {
+      name: 'CRM Phu Hoang Land',
+      size: 3,
+      detail: [
+        {
+          'Engineered UI and integrate API': [
+            'Manage customer, department, employeee, project, room booking, meeting, calendar...',
+            'Worked alongside UX designers to accurately implement Figma designs in building user-facing tools.',
+          ],
+        },
+        'Technical used in projects: ReactJS, AntD.',
+      ],
+    },
+    // Hotel UEH Edu
+    {
+      name: [
+        '<a href="https://hotel.ueh.edu.vn/vi/" target="_blank">https://hotel.ueh.edu.vn/vi/</a>',
+      ],
+      size: 2,
+      detail: [
+        'Developed responsive WordPress themes with pixel-perfect precision from Adobe XD designs.',
+        'Technical used in projects: HTML, CSS, JS, jQuery, Swiper, Bootstrap, Wordpress, TypeRocket, Advanced Custom Field (ACF).',
+      ],
+    },
+  ],
+  '* Project in Corsiva Lab': [
+    {
+      name: [
+        '<a href="http://www.kaimay.com.sg/" target="_blank">http://www.kaimay.com.sg/</a>',
+        '<a href=" https://www.tacamsteel.com/" target="_blank">https://www.tacamsteel.com/</a>',
+        '<a href="https://medelabreastfeeding.asia/sg/" target="_blank">https://medelabreastfeeding.asia/sg/</a>',
+      ],
+      size: 2,
+      detail: [
+        'Built custom WordPress themes by accurately translating Adobe XD layouts into code.',
+        'Built dynamic WordPress templates using TypeRocket, enabling flexible section layouts per page.',
+        'Technical used in projects: HTML, CSS, JS, jQuery, Swiper, Bootstrap, Wordpress, Woocommerce, TypeRocket, Advanced Custom Field (ACF).',
+      ],
+    },
+    {
+      name: '<a href="http://virtualwebdesign.azurewebsites.net/" target="_blank">http://virtualwebdesign.azurewebsites.net/</a>',
+      size: 2,
+      detail: [
+        'Used HTML, CSS, and jQuery to translate Figma designs into responsive, user-friendly tools in close collaboration with UX designers.',
+        "Utilized cookies to store and restore users' previous steps in multi-step processes.",
+      ],
+    },
+    {
+      name: '<a href="http://payabeachv19.azurewebsites.net/" target="_blank">http://payabeachv19.azurewebsites.net/</a>',
+      size: 2,
+      detail: [
+        'Built custom WordPress themes by accurately translating Adobe XD layouts into code.',
+        'Developed custom WordPress theme templates with flexible section layouts for each page.',
+        'Technical used in projects: HTML, CSS, JS, jQuery, Swiper, Bootstrap, Wordpress, Woocommerce, TypeRocket, Advanced Custom Field (ACF).',
+      ],
+    },
+  ],
+  '* Project in Munkas': [
+    {
+      name: '<a href="https://munkas.com/" target="_blank">https://munkas.com/</a>',
+      size: 1,
+      detail: [
+        'Worked alongside UX designers to accurately implement Figma designs in building user-facing tools.',
+        'Technical used in projects: HTML, CSS, JS, jQuery, Swiper, Bootstrap, Wordpress, Advanced Custom Field (ACF).',
+      ],
+      note: '<i><strong>* Note:</strong></i> Munkas Agency is a social media company so each campaign has one website for each project. After the campaign ends, the site is no longer kept. So I cannot save all the domains for that project.',
+    },
+  ],
+};
 
-const projectsInZivas: Project[] = [
-  {
-    name: 'CRM Phu Hoang Land (Feb 2020 – Feb 2021)',
-    size: '3',
-    position: 'Front-End Developer',
-    technology: ['Technical used in projects: reactjs, antd.'],
-    description: (
-      <>
-        <p>
-          Engineered UI to manage customer, department, employeee, project, room booking, meeting,
-          calendar...
-        </p>
-        <p>
-          Worked alongside UX designers to accurately implement Figma designs in building
-          user-facing tools.
-        </p>
-      </>
-    ),
-  },
-  {
-    name: (
-      <Link href="https://hotel.ueh.edu.vn/vi/" target="_blank">
-        https://hotel.ueh.edu.vn/vi/
-      </Link>
-    ),
-    size: '1',
-    technology: [
-      'Technical used in projects: html, css, js, jquery, swiper, bootstrap, wordpress, typerocket, advanced custom field (acf).',
-    ],
-    description: (
-      <>
-        <p>
-          Developed responsive WordPress themes with pixel-perfect precision from Adobe XD designs.
-        </p>
-      </>
-    ),
-  },
-];
-
-const projectsInCorsivaLab: Project[] = [
-  {
-    name: (
-      <>
-        <Link href="http://www.kaimay.com.sg/" target="_blank">
-          http://www.kaimay.com.sg/
-        </Link>
-        <br />
-        <Link href=" https://www.tacamsteel.com/" target="_blank">
-          https://www.tacamsteel.com/
-        </Link>
-        <br />
-        <Link href="https://medelabreastfeeding.asia/sg/" target="_blank">
-          https://medelabreastfeeding.asia/sg/
-        </Link>
-      </>
-    ),
-    size: '1',
-    technology: [
-      'Technical used in projects: html, css, js, jquery, swiper, bootstrap, wordpress, woocommerce, typerocket, advanced custom field (acf).',
-    ],
-    description: (
-      <>
-        <p>Built custom WordPress themes by accurately translating Adobe XD layouts into code.</p>
-        <p>
-          Developed custom WordPress theme templates with flexible section layouts for each page.
-        </p>
-      </>
-    ),
-  },
-  {
-    name: (
-      <>
-        <Link href="http://virtualwebdesign.azurewebsites.net/" target="_blank">
-          http://virtualwebdesign.azurewebsites.net/
-        </Link>
-      </>
-    ),
-    size: '1',
-    technology: ['HTML, CSS, jQuery', 'Work with Cookie'],
-  },
-  {
-    name: (
-      <Link href="http://payabeachv19.azurewebsites.net/" target="_blank">
-        http://payabeachv19.azurewebsites.net/
-      </Link>
-    ),
-    size: '1',
-    technology: [
-      'Technical used in projects: html, css, js, jquery, swiper, bootstrap, wordpress, woocommerce, typerocket, advanced custom field (acf).',
-    ],
-    description: (
-      <>
-        <p>Built custom WordPress themes by accurately translating Adobe XD layouts into code.</p>
-        <p>
-          Developed custom WordPress theme templates with flexible section layouts for each page.
-        </p>
-      </>
-    ),
-  },
-];
-
-const projectsInMunkas: Project[] = [
-  {
-    name: (
-      <Link href="https://munkas.com/" target="_blank">
-        https://munkas.com/
-      </Link>
-    ),
-    size: '1',
-    technology: [
-      'Technical used in projects: html, css, js, jquery, swiper, bootstrap, wordpress, woocommerce, typerocket, advanced custom field (acf).',
-    ],
-    description: (
-      <>
-        <p>
-          Worked alongside UX designers to accurately implement Figma designs in building
-          user-facing tools.
-        </p>
-      </>
-    ),
-  },
-];
 //#endregion
 
+const ProjectSection = ({ title, projects }: { title: string; projects: Project[] }) => {
+  const ProjectName = ({ name }: { name: string | string[] }) => {
+    if (typeof name === 'string') {
+      return <p dangerouslySetInnerHTML={{ __html: name }} />;
+    }
+    if (Array.isArray(name)) {
+      return name.map((n) => <ProjectName name={n} />);
+    }
+    return null;
+  };
+
+  return (
+    <div className={styles.project}>
+      <h4 className={clsx(styles.subtitle, styles.note)}>{title}</h4>
+      <table className={clsx(styles.table, styles.bordered)}>
+        <tbody>
+          <tr>
+            <th className={styles.head25}>App/Tool Name</th>
+            <th>Team size</th>
+            <th className={styles.head70}>Detail</th>
+          </tr>
+          {projects.map((project, index) => {
+            const { name, size, detail, note } = project;
+            return (
+              <tr key={index.toString()}>
+                <td>
+                  <ProjectName name={name} />
+                </td>
+                <td>{size}</td>
+                <td>
+                  <ul className={styles.list}>
+                    {detail.map((lv0, lv0Index) => {
+                      if (typeof lv0 === 'string') {
+                        return (
+                          <li key={lv0Index.toString()} dangerouslySetInnerHTML={{ __html: lv0 }} />
+                        );
+                      }
+                      return Object.keys(lv0).map((lv1, lv1Index) => {
+                        const lv2s = lv0[lv1];
+                        return (
+                          <li key={`${lv1Index}`}>
+                            <span dangerouslySetInnerHTML={{ __html: lv1 }} />
+                            <ul className={styles.list}>
+                              {lv2s.map((lv2, lv2Index) => {
+                                return (
+                                  <li
+                                    key={`${lv1Index}-${lv2Index}`}
+                                    dangerouslySetInnerHTML={{ __html: lv2 }}
+                                  />
+                                );
+                              })}
+                            </ul>
+                          </li>
+                        );
+                      });
+                    })}
+                  </ul>
+                  {!!note && <p dangerouslySetInnerHTML={{ __html: note }} />}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 export const CV: FC = () => {
   return (
     <div className={styles.main}>
@@ -472,158 +448,10 @@ export const CV: FC = () => {
         <div className={clsx(styles.container, styles.projects)}>
           <h2 className={styles.title}>PROJECTS</h2>
           <div className={styles.divider} />
-          {/* ** Hello Health Group ** */}
-          <div className={styles.project}>
-            <h4 className={clsx(styles.subtitle, styles.note)}>* Projects in Hello Health Group</h4>
-            <table className={clsx(styles.table, styles.bordered)}>
-              <tbody>
-                <tr>
-                  <th className={styles.head30}>App/Tool Name</th>
-                  <th>Team size</th>
-                  <th className={styles.head60}>Description</th>
-                </tr>
-                {projectsInHHG.map((project, index) => {
-                  return (
-                    <tr key={index.toString()}>
-                      <td>{project.name}</td>
-                      <td>{project.size}</td>
-                      <td>
-                        <ul className={styles.list}>
-                          {project.technology.map((item, itemIndex) => {
-                            return <li key={itemIndex.toString()}>{item}</li>;
-                          })}
-                        </ul>
-                        {project.description}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          {/* ** Zivas ** */}
-          <div className={styles.project}>
-            <h4 className={clsx(styles.subtitle, styles.note)}>* Projects in Zivas</h4>
-            <div className={styles.projectTitle}>{projectsInZivas[0].name}</div>
-            <table className={clsx(styles.table, styles.bordered)}>
-              <tbody>
-                <tr>
-                  <th className={styles.head30}>Description</th>
-                  <td>{projectsInZivas[0].description}</td>
-                </tr>
-                <tr>
-                  <th>Team size</th>
-                  <td>{projectsInZivas[0].size}</td>
-                </tr>
-                <tr>
-                  <th>Position</th>
-                  <td>{projectsInZivas[0].position}</td>
-                </tr>
-                <tr>
-                  <th>Technologies used</th>
-                  <td>
-                    <ul className={styles.list}>
-                      {projectsInZivas[0].technology.map((item, itemIndex) => {
-                        return <li key={itemIndex.toString()}>{item}</li>;
-                      })}
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table className={clsx(styles.table, styles.bordered)}>
-              <tbody>
-                <tr>
-                  <th className={styles.head45}>Website</th>
-                  {/* <th>Team size</th> */}
-                  <th className={styles.head50}>Techonlogies used</th>
-                </tr>
-                {projectsInZivas.slice(1).map((project, index) => {
-                  return (
-                    <tr key={index.toString()}>
-                      <td>{project.name}</td>
-                      {/* <td>{project.size}</td> */}
-                      <td>
-                        <ul className={styles.list}>
-                          {project.technology.map((item, itemIndex) => {
-                            return <li key={itemIndex.toString()}>{item}</li>;
-                          })}
-                        </ul>
-                        {project.description}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          {/* ** Corsiva Lab ** */}
-          <div className={styles.project}>
-            <h4 className={clsx(styles.subtitle, styles.note)}>* Project in Corsiva Lab</h4>
-            <table className={clsx(styles.table, styles.bordered)}>
-              <tbody>
-                <tr>
-                  <th className={styles.head45}>Website</th>
-                  {/* <th>Team size</th> */}
-                  <th className={styles.head50}>Techonlogies used</th>
-                </tr>
-                {projectsInCorsivaLab.map((project, index) => {
-                  return (
-                    <tr key={index.toString()}>
-                      <td>{project.name}</td>
-                      {/* <td>{project.size}</td> */}
-                      <td>
-                        <ul className={styles.list}>
-                          {project.technology.map((item, itemIndex) => {
-                            return <li key={itemIndex.toString()}>{item}</li>;
-                          })}
-                        </ul>
-                        {project.description}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          {/* ** Munkas ** */}
-          <div className={styles.project}>
-            <h4 className={clsx(styles.subtitle, styles.note)}>* Project in Munkas Agency</h4>
-            <table className={clsx(styles.table, styles.bordered)}>
-              <tbody>
-                <tr>
-                  <th className={styles.head45}>Website</th>
-                  {/* <th>Team size</th> */}
-                  <th className={styles.head50}>Techonlogies used</th>
-                </tr>
-                {projectsInMunkas.map((project, index) => {
-                  return (
-                    <tr key={index.toString()}>
-                      <td>{project.name}</td>
-                      {/* <td>{project.size}</td> */}
-                      <td>
-                        <ul className={styles.list}>
-                          {project.technology.map((item, itemIndex) => {
-                            return <li key={itemIndex.toString()}>{item}</li>;
-                          })}
-                        </ul>
-                        {project.description}
-                      </td>
-                    </tr>
-                  );
-                })}
-                <tr>
-                  <td colSpan={2}>
-                    <p className={styles.note}>
-                      <strong>* Note:</strong> Munkas Agency is a social media company so each
-                      campaign has one website for each project. After the campaign ends, the site
-                      is no longer kept. So I cannot save all the domains for that project.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          {Object.keys(projects).map((title) => {
+            const prjs = projects[title as keyof typeof projects];
+            return <ProjectSection title={title} projects={prjs} />;
+          })}
         </div>
       </div>
     </div>
