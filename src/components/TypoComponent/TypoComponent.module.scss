@@ -1,0 +1,42 @@
+.title {
+  @apply uppercase text-inherit font-semibold font-Josefin_Sans;
+}
+
+.beautyTitle {
+  @apply text-inherit font-normal font-The_Gwathmey;
+}
+
+.subTitle {
+  @apply text-inherit font-EB_Garamond italic;
+}
+
+.paragraph {
+  @apply text-gray400 font-Open_Sans;
+}
+
+.sm {
+  &.title {
+    @apply text-[20px] leading-[1.55em] tracking-[0.18em];
+  }
+}
+
+.md {
+  &.title {
+    @apply text-[29px] leading-[1.55em] tracking-[0.2em];
+  }
+  &.beautyTitle {
+    @apply text-[50px] leading-[60px];
+  }
+  &.paragraph {
+    @apply text-[15px] leading-[1.8em];
+  }
+}
+
+.lg {
+  &.title {
+    @apply text-[50px] leading-[60px] tracking-[11px];
+  }
+  &.beautyTitle {
+    @apply text-[55px] leading-[65px];
+  }
+}

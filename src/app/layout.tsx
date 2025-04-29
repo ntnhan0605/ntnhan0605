@@ -1,9 +1,10 @@
-import { FooterComponent } from 'src/components/FooterComponent';
-import { HeaderComponent } from 'src/components/HeaderComponent';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { EB_Garamond, Josefin_Sans, Open_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import { ReactNode } from 'react';
+import { FooterComponent } from 'src/components/FooterComponent';
+import { HeaderComponent } from 'src/components/HeaderComponent';
 import './globals.css';
 
 const OpenSansFont = Open_Sans({
@@ -23,6 +24,10 @@ const EBGaramond = EB_Garamond({
   style: ['normal', 'italic'],
   weight: ['400'],
 });
+const TheGwathmey = localFont({
+  src: [{ path: '../../public/fonts/TheGwathmey.ttf', weight: '400', style: 'normal' }],
+  variable: '--font-the-gwathmey',
+});
 
 export const metadata: Metadata = {
   title: 'Furniture Store',
@@ -37,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           JosefinSansFont.variable,
           OpenSansFont.variable,
           EBGaramond.variable,
+          TheGwathmey.variable,
           'bg-white',
         )}
       >

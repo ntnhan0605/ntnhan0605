@@ -7,3 +7,5 @@ export type IconComponent =
 export type DataAttributes = {
   [key: `data-${string}`]: string | number;
 };
+
+export type Size = 'sm' | 'md' | 'lg';

@@ -25,6 +25,7 @@ const config: Config = {
         Open_Sans: 'var(--font-open-sans)',
         Josefin_Sans: 'var(--font-josefin-sans)',
         EB_Garamond: 'var(--font-eb-garamond)',
+        The_Gwathmey: 'var(--font-the-gwathmey)',
       },
       transitionTimingFunction: {
         'btn-line': 'cubic-bezier(0.51,0.49,0.45,0.9)',
@@ -79,6 +80,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animated')],
 };
 export default config;

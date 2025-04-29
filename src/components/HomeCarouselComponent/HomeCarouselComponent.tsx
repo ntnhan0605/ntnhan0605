@@ -1,15 +1,16 @@
 'use client';
-import ChevronLeftSvg from 'src/icons/ChevronLeftSvg';
 import clsx from 'clsx';
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
+import ChevronLeftSvg from 'src/icons/ChevronLeftSvg';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
-import styles from './HomeCarouselComponent.module.scss';
 import { ButtonComponent } from '../ButtonComponent';
+import { TypoComponent } from '../TypoComponent/TypoComponent';
+import styles from './HomeCarouselComponent.module.scss';
 
 export const HomeCarouselComponent: FC = () => {
   return (
@@ -30,6 +31,16 @@ export const HomeCarouselComponent: FC = () => {
       }}
       on={{}}
       onSetTransition={(e, transition) => {
+        const $beautyTitle = e.slides[e.activeIndex].querySelector('.beauty-title');
+        const $title = e.slides[e.activeIndex].querySelector('.title');
+        const $buttons = e.slides[e.activeIndex].querySelector('.buttons');
+
+        console.log(
+          '** RYAN HomeCarouselComponent.tsx 37 $beautyTitle, $title, $buttons : ',
+          $beautyTitle,
+          $title,
+          $buttons,
+        );
         console.log('** RYAN HomeCarouselComponent.tsx 34 e,transition : ', e, transition);
       }}
       className={styles.homeSliderContainer}
@@ -38,13 +49,27 @@ export const HomeCarouselComponent: FC = () => {
         <div className={styles.homeSlider}>
           <img src="/images/Home1_rev1.jpg" alt="Home 1" className={styles.homeSliderBgImg} />
           <div className={styles.homeSliderContent}>
-            <p className="titleScript">We love Handmade</p>
-            <h3 className="title">INTERIOR DECORATION</h3>
-            <div className="buttonGroup">
-              <ButtonComponent variant="ghost" animated>
+            <TypoComponent
+              as="p"
+              variant="beautyTitle"
+              size="lg"
+              className="beauty-title animate-none"
+            >
+              We love Handmade
+            </TypoComponent>
+            <TypoComponent
+              as="h2"
+              variant="title"
+              size="lg"
+              className="title animate-none animate-delay-100"
+            >
+              INTERIOR DECORATION
+            </TypoComponent>
+            <div className="buttons animate-none animate-delay-200">
+              <ButtonComponent variant="ghost" animated className="button">
                 Get Concept
               </ButtonComponent>
-              <ButtonComponent variant="ghost" animated>
+              <ButtonComponent variant="ghost" animated className="button">
                 Read More
               </ButtonComponent>
             </div>

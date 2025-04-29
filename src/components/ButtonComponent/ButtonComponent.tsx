@@ -1,18 +1,18 @@
 import { CSSProperties, FC, MouseEventHandler, PropsWithChildren } from 'react';
 
-import { DataAttributes, IconComponent } from 'src/interface/index';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { DataAttributes, IconComponent, Size } from 'src/interface/index';
 
 import styles from './ButtonComponnet.module.scss';
 
-const PREFIX = 'ButtonComponent';
+const PREFIX = 'Button';
 
 export type ButtonComponentProps = {
   href?: string;
   htmlType?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'link';
-  size?: 'sm' | 'md' | 'lg';
+  size?: Size;
   loading?: boolean;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
