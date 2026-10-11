@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Nền và chữ */
+  --color-navy: #0b1220;
+  --color-slate: #1e293b;
+  --color-slate-line: #334155;
+  --color-slate-muted: #64748b;
+  --color-slate-soft: #94a3b8;
+  --color-mist: #cbd5e1;
+  --color-cool: #e2e8f0;
+  --color-paper-white: #f8fafc;
+  --color-ink: #0f172a;
+  --color-ink-muted: #475569;
+
+  /* Nhấn */
+  --color-water: #38bdf8;
+  --color-cyan: #22d3ee;
+  --color-accent: #0284c7;
+  --color-accent-deep: #0369a1;
+  --color-accent-blue: #2563eb;
+  --color-accent-light: #7dd3fc;
+  --color-sky-tint: #e0f2fe;
+
+  /* Nút hệ thống */
+  --color-traffic-red: #ff5f57;
+  --color-traffic-yellow: #febc2e;
+  --color-traffic-green: #28c840;
+
+  /* Font nếu có */
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --win-bg: var(--color-paper-white);
+  --win-text: var(--color-ink);
+}
+
+:root[data-theme='dark'] {
+  --win-bg: var(--color-slate);
+  --win-text: var(--color-paper-white);
+}
