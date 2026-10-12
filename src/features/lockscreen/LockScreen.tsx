@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { useEffect, useState } from 'react'
 
 import { Icon } from '#/components/Icon'
 import { writeSession } from '#/lib/session'
 import { useSystem } from '#/stores/system'
 
+import { ButtonIcon } from '#/components/ButtonIcon'
 import { PasswordForm } from './PasswordForm'
 
 const WALLPAPER = '/images/wallpaper.webp'
@@ -99,7 +100,11 @@ export function LockScreen() {
               onClick={() => unlock('guest')}
               className="flex flex-col items-center gap-2.5 rounded-2xl p-1.5 transition-transform hover:-translate-y-0.75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
             >
-              <Icon name="guest" size={88} className="shadow-[0_12px_34px_-10px_rgba(2,6,23,.7)]" />
+              <Icon
+                name="guest"
+                size={88}
+                className="shadow-[0_12px_34px_-10px_rgba(2,6,23,.7)] rounded-full"
+              />
               <b className="text-base font-semibold [text-shadow:0_1px_8px_rgba(11,18,32,.5)]">
                 Guest
               </b>
@@ -140,33 +145,22 @@ export function LockScreen() {
 
       {/* Nút nguồn góc dưới phải */}
       <div className="absolute right-7 bottom-[calc(26px+env(safe-area-inset-bottom,0px))] flex gap-5.5">
-        <PowerButton label="Sleep" icon="sleep" onClick={() => setStatus('sleep')} />
-        <PowerButton label="Restart" icon="restart" onClick={() => setStatus('booting')} />
-        <PowerButton label="Shut Down" icon="poweroff" onClick={() => setStatus('off')} />
+        <ButtonIcon
+          label="Sleep"
+          icon="sleep"
+          onClick={() => setStatus('sleep')}
+        />
+        <ButtonIcon
+          label="Restart"
+          icon="restart"
+          onClick={() => setStatus('booting')}
+        />
+        <ButtonIcon
+          label="Shut Down"
+          icon="poweroff"
+          onClick={() => setStatus('off')}
+        />
       </div>
     </motion.div>
-  )
-}
-
-function PowerButton({
-  label,
-  icon,
-  onClick,
-}: {
-  label: string
-  icon: 'sleep' | 'restart' | 'poweroff'
-  onClick: () => void
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="flex flex-col items-center gap-1.5 text-[.72rem] opacity-85 hover:opacity-100"
-    >
-      <span className="grid size-10 place-items-center rounded-full border border-slate-50/22 bg-slate-50/16">
-        <Icon name={icon} size={18} />
-      </span>
-      {label}
-    </button>
   )
 }
