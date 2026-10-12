@@ -1,5 +1,3 @@
-bump
-
 Welcome to your new TanStack Start app!
 
 # Getting Started
