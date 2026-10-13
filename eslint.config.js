@@ -9,6 +9,11 @@ export default [
       'import/no-cycle': 'off',
       'import/order': 'off',
       'sort-imports': 'off',
+      'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports', fixStyle: 'prefer-top-level' },
+      ],
       '@typescript-eslint/array-type': 'off',
       '@typescript-eslint/require-await': 'off',
       'pnpm/json-enforce-catalog': 'off',
