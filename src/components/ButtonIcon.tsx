@@ -1,25 +1,74 @@
-import { Icon } from './Icon'
-import type { IconName } from './Icon'
+import { cn } from '#/lib/cn'
+import { cva, type VariantProps } from 'class-variance-authority'
+import type { ButtonHTMLAttributes, FC } from 'react'
+import { Icon, type IconProps } from './Icon'
 
-export function ButtonIcon({
-  label,
-  icon,
-  onClick,
-}: {
-  label: string
-  icon: IconName
-  onClick: () => void
-}) {
+const buttonIconVariants = cva(
+  [
+    'flex flex-col items-center',
+    'opacity-85 hover:opacity-100',
+    'text-paper-white',
+    'cursor-pointer',
+  ],
+  {
+    variants: {
+      size: {
+        xs: '',
+        sm: '',
+        md: 'gap-1.5 text-[.72rem]',
+        lg: 'gap-1.5 text-[.72rem]',
+        xl: '',
+        xxl: '',
+      },
+      defaultVariants: { size: 'md' },
+    },
+  },
+)
+
+const iconVariants = cva(
+  [
+    'grid size-10 place-items-center rounded-full',
+    'border border-slate-50/22 bg-slate-50/16',
+  ],
+  {
+    variants: {
+      size: {
+        xs: 'size-2',
+        sm: 'size-4',
+        md: 'size-10',
+        lg: 'size-16',
+        xl: 'size-22',
+        xxl: 'size-28',
+      },
+      defaultVariants: { size: 'md' },
+    },
+  },
+)
+
+export type ButtonIconProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonIconVariants> & {
+    name: IconProps['name']
+  }
+
+export const ButtonIcon: FC<ButtonIconProps> = ({
+  size,
+  name,
+  children,
+  className,
+  ...props
+}) => {
   return (
     <button
       type="button"
-      onClick={onClick}
-      className="flex flex-col items-center gap-1.5 text-[.72rem] opacity-85 hover:opacity-100"
+      {...props}
+      className={cn('ButtonIcon', buttonIconVariants({ size }), className)}
     >
-      <span className="grid size-10 place-items-center rounded-full border border-slate-50/22 bg-slate-50/16">
-        <Icon name={icon} size={18} />
+      <span
+        className={cn('ButtonIcon--icon_container', iconVariants({ size }))}
+      >
+        <Icon name={name} size={size} className="ButtonIcon--icon" />
       </span>
-      {label}
+      {children}
     </button>
   )
 }

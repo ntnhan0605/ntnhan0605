@@ -6,9 +6,10 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import '../styles.css'
-import { BootScreen } from '#/features/boot/BootScreen'
-import { LockScreen } from '#/features/lockscreen/LockScreen'
-import { SleepScreen } from '#/features/sleepscreen/SleepScreen'
+import { BootScreen } from '#/features/system/BootScreen'
+import { LockScreen } from '#/features/system/lockscreen/LockScreen'
+import { SleepScreen } from '#/features/system/SleepScreen'
+import { PowerScreen } from '#/features/system/PowerScreen'
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -29,6 +30,7 @@ function RootComponent() {
           )}
           {status === 'locked' && <LockScreen key="locked" />}
           {status === 'sleep' && <SleepScreen key="sleep" />}
+          {status === 'off' && <PowerScreen key="off" />}
         </AnimatePresence>
         {/* Lớp 2: nội dung route, chỉ hiện khi đang chạy */}
         <AnimatePresence>

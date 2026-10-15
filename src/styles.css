@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Literata:ital,wght@0,400;0,600;1,400&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -27,8 +28,19 @@
   --color-traffic-yellow: #febc2e;
   --color-traffic-green: #28c840;
 
-  /* Font nếu có */
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, 'Segoe UI', 'Ubuntu', system-ui, sans-serif;
+  --font-serif: 'Literata', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-paper-white-translucent: rgba(248, 250, 252, 0.16);
+  --color-paper-white-translucent-strong: rgba(248, 250, 252, 0.22);
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
 :root {

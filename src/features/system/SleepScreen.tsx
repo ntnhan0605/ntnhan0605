@@ -12,7 +12,7 @@ export function SleepScreen() {
       initial={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       onClick={onLocked}
-      onKeyDown={onLocked}
+      onKeyPress={onLocked}
     >
       <small>Sleep - click or press any key to awake</small>
     </motion.div>

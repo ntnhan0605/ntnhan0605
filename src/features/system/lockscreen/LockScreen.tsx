@@ -145,21 +145,15 @@ export function LockScreen() {
 
       {/* Nút nguồn góc dưới phải */}
       <div className="absolute right-7 bottom-[calc(26px+env(safe-area-inset-bottom,0px))] flex gap-5.5">
-        <ButtonIcon
-          label="Sleep"
-          icon="sleep"
-          onClick={() => setStatus('sleep')}
-        />
-        <ButtonIcon
-          label="Restart"
-          icon="restart"
-          onClick={() => setStatus('booting')}
-        />
-        <ButtonIcon
-          label="Shut Down"
-          icon="poweroff"
-          onClick={() => setStatus('off')}
-        />
+        <ButtonIcon name="sleep" onClick={() => setStatus('sleep')}>
+          Sleep
+        </ButtonIcon>
+        <ButtonIcon name="restart" onClick={() => setStatus('booting')}>
+          Restart
+        </ButtonIcon>
+        <ButtonIcon name="poweroff" onClick={() => setStatus('off')}>
+          Shut Down
+        </ButtonIcon>
       </div>
     </motion.div>
   )
