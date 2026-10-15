@@ -1,15 +1,15 @@
+import { PageTransition } from '#/components/PageTransition'
+import { BootScreen } from '#/features/boot/BootScreen'
+import { LockScreen } from '#/features/lockscreen/LockScreen'
+import { PowerScreen } from '#/features/power/PowerScreen'
+import { SleepScreen } from '#/features/power/SleepScreen'
 import { useSystem } from '#/stores/system'
-import { createRootRoute, Outlet, useRouterState } from '@tanstack/react-router'
-import { AnimatePresence, motion, MotionConfig } from 'motion/react'
-
 import { TanStackDevtools } from '@tanstack/react-devtools'
+import { createRootRoute, Outlet, useRouterState } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-
+import { AnimatePresence, MotionConfig } from 'motion/react'
 import '../styles.css'
-import { BootScreen } from '#/features/system/BootScreen'
-import { LockScreen } from '#/features/system/lockscreen/LockScreen'
-import { SleepScreen } from '#/features/system/SleepScreen'
-import { PowerScreen } from '#/features/system/PowerScreen'
+import { AppShell } from '#/components/AppShell'
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -22,7 +22,7 @@ function RootComponent() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="w-screen h-screen overflow-hidden bg-black">
+      <div className="w-screen h-screen overflow-hidden bg-black relative">
         {/* Lớp 1: màn hình hệ thống, tối đa một màn tại một thời điểm */}
         <AnimatePresence mode="wait">
           {status === 'booting' && (
@@ -35,15 +35,11 @@ function RootComponent() {
         {/* Lớp 2: nội dung route, chỉ hiện khi đang chạy */}
         <AnimatePresence>
           {status === 'running' && (
-            <motion.div
-              key={pathname}
-              className="w-full h-full"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
-            >
-              <Outlet />
-            </motion.div>
+            <AppShell>
+              <PageTransition key={pathname}>
+                <Outlet />
+              </PageTransition>
+            </AppShell>
           )}
         </AnimatePresence>
         <TanStackDevtools

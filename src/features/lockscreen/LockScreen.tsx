@@ -1,30 +1,20 @@
-import { motion, useReducedMotion } from 'motion/react'
-import { useEffect, useState } from 'react'
-
-import { Icon } from '#/components/Icon'
+import { ButtonIcon } from '#/components/ui/ButtonIcon'
+import { Icon } from '#/components/ui/Icon'
+import { useClock } from '#/hooks/useClock'
 import { writeSession } from '#/lib/session'
 import { useSystem } from '#/stores/system'
-
-import { ButtonIcon } from '#/components/ButtonIcon'
+import { motion, useReducedMotion } from 'motion/react'
+import { useEffect, useState } from 'react'
 import { PasswordForm } from './PasswordForm'
 
-const WALLPAPER = '/images/wallpaper.webp'
 const AVATAR = '/images/avatar-nolan.webp'
 
 type Mode = 'pick' | 'pw'
 
-function useClock() {
-  const [now, setNow] = useState(() => new Date())
-  useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 10_000)
-    return () => clearInterval(id)
-  }, [])
-  return now
-}
-
 export function LockScreen() {
-  const setStatus = useSystem((s) => s.setStatus)
   const now = useClock()
+  const wallpaper = useSystem((s) => s.wallpaper)
+  const setStatus = useSystem((s) => s.setStatus)
   const reduce = useReducedMotion()
   const [mode, setMode] = useState<Mode>('pick')
 
@@ -56,7 +46,7 @@ export function LockScreen() {
     <motion.div
       className="fixed inset-0 z-3000 flex flex-col items-center justify-between px-5 pt-[7vh] pb-[5vh] text-slate-50 select-none"
       style={{
-        backgroundImage: `url(${WALLPAPER})`,
+        backgroundImage: `url(${wallpaper})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -77,7 +67,7 @@ export function LockScreen() {
       </div>
 
       {/* Người dùng, mật khẩu, gợi ý */}
-      <div className="relative flex w-full flex-col items-center gap-4.5">
+      <div className="relative flex w-full flex-col items-center gap-4.5 max-md:mt-auto max-md:mb-4.5">
         {mode === 'pick' ? (
           <div className="flex justify-center gap-11">
             <button
@@ -144,7 +134,7 @@ export function LockScreen() {
       </div>
 
       {/* Nút nguồn góc dưới phải */}
-      <div className="absolute right-7 bottom-[calc(26px+env(safe-area-inset-bottom,0px))] flex gap-5.5">
+      <div className="md:absolute md:right-7 md:bottom-[calc(26px+env(safe-area-inset-bottom,0px))] flex gap-5.5">
         <ButtonIcon name="sleep" onClick={() => setStatus('sleep')}>
           Sleep
         </ButtonIcon>

@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from 'react'
 import { useAnimate } from 'motion/react'
 
-import { Icon } from '#/components/Icon'
+import { Icon } from '#/components/ui/Icon'
+import { GlassPanel } from '#/components/ui/GlassPanel'
 
 // Lấy từ file HTML gốc
 const PASSWORDS = ['water', '水', 'nham thuy', 'nhâm thủy', 'nhamthuy']
@@ -36,28 +37,25 @@ export function PasswordForm({ onUnlock, onGuest, onCancel }: Props) {
 
   return (
     <div className="flex flex-col items-center gap-2.5">
-      <form
-        ref={scope}
-        onSubmit={handleSubmit}
-        autoComplete="off"
-        className="flex h-9 w-57.5 items-center rounded-full border border-slate-50/28 bg-slate-50/18 pr-1 pl-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,.15)]"
-      >
-        <input
-          type="password"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Enter Password"
-          aria-label="Password"
-          autoFocus
-          className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-50/70"
-        />
-        <button
-          type="submit"
-          aria-label="Log in"
-          className="grid size-7 flex-none place-items-center rounded-full bg-slate-50/22"
-        >
-          <Icon name="log-in" size={15} />
-        </button>
+      <form ref={scope} onSubmit={handleSubmit} autoComplete="off" className="">
+        <GlassPanel className="flex h-9 w-57.5 items-center rounded-full pr-1 pl-3.5">
+          <input
+            type="password"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Enter Password"
+            aria-label="Password"
+            autoFocus
+            className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-50/70"
+          />
+          <button
+            type="submit"
+            aria-label="Log in"
+            className="grid size-7 flex-none place-items-center rounded-full bg-slate-50/22"
+          >
+            <Icon name="log-in" size={15} />
+          </button>
+        </GlassPanel>
       </form>
 
       <div className="min-h-[1.2em] text-center text-[.8rem] opacity-90 [text-shadow:0_1px_6px_rgba(11,18,32,.6)]">

@@ -32,15 +32,25 @@ src/
 │ ├── PowerScreen.tsx
 │ └── usePower.ts # sleep / restart / shutdown
 │
-├── components/ # UI nhỏ dùng chung, không biết gì về nghiệp vụ
-│ ├── Logo.tsx
-│ ├── ProgressBar.tsx
+├── components/
+│ ├── ui/ # primitive, không biết nghiệp vụ, không biết layout
+│ │ ├── Icon.tsx
+│ │ ├── Avatar.tsx
+│ │ ├── Button.tsx # hoặc ButtonIcon.tsx hiện tại
+│ │ └── GlassPanel.tsx # khung kính mờ dùng lại được
+│ └── layout/ # khung bố cục, quyết định vị trí của children
+│ ├── AppShell.tsx # bọc Outlet, wallpaper, lớp kính
+│ ├── Screen.tsx # full-screen + căn giữa (lock/sleep/power dùng chung)
 │ └── PageTransition.tsx # motion.div bọc Outlet
+│
+├── hooks/ # hook dùng chung, không gắn với một feature
+│ └── useClock.ts
 │
 ├── stores/ # state toàn cục
 │ └── system.ts # trạng thái: booting | locked | running | off
 │
 ├── lib/ # hàm thuần, không phụ thuộc React
+│ ├── cn.ts
 │ └── session.ts # đọc/ghi sessionStorage an toàn
 │
 ├── router.tsx

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
-import { Icon } from '#/components/Icon'
+import { Icon } from '#/components/ui/Icon'
 
 type Props = { onDone: () => void }
 
@@ -26,7 +26,6 @@ export function BootScreen({ onDone }: Props) {
       transition={{ duration: 0.5 }}
     >
       <Icon name="logo" size={72} className="text-slate-50" />
-
       <div className="h-1.25 w-45 overflow-hidden rounded-full bg-slate-800">
         <motion.div
           className="h-full rounded-[inherit] bg-slate-50"

@@ -13,15 +13,15 @@ const buttonIconVariants = cva(
   {
     variants: {
       size: {
-        xs: '',
-        sm: '',
-        md: 'gap-1.5 text-[.72rem]',
-        lg: 'gap-1.5 text-[.72rem]',
-        xl: '',
-        xxl: '',
+        sm: 'gap-0.5 text-[.72rem]',
+        xs: 'gap-1 text-[.72rem]',
+        md: 'gap-1.5 text-[.72rem]', // Default
+        lg: 'gap-2 text-[.8rem]',
+        xl: 'gap-2.5 text-[.92rem]',
+        xxl: 'gap-3 text-base',
       },
-      defaultVariants: { size: 'md' },
     },
+    defaultVariants: { size: 'md' },
   },
 )
 

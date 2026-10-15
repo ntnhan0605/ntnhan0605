@@ -182,6 +182,34 @@ function PeopleComponent() {
 
 Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
 
+## Components
+
+### ScreenComponent
+
+`ScreenComponent` (`src/components/layout/ScreenComponent.tsx`) là khung toàn màn hình dùng chung cho các màn hệ thống như sleep, power và lock. Nó là một `motion.div` với:
+
+- Bố cục: `flex items-center justify-center w-full h-full`, chữ `text-slate-soft text-sm`, `select-none`.
+- Animation: khi vào hiển thị ngay (`opacity: 1, scale: 1`), khi thoát thì mờ dần và thu nhỏ về `scale: 0.9`.
+- Props: nhận mọi prop của `HTMLMotionProps<'div'>`. `className` được ghép với class mặc định bằng `cn`, nên có thể ghi đè hoặc thêm class (ví dụ `fixed inset-0`).
+
+```tsx
+import { ScreenComponent } from '#/components/layout/ScreenComponent'
+
+<AnimatePresence>
+  {status === 'sleep' && (
+    <ScreenComponent key="sleep" onClick={wake}>
+      <small>Sleep - click or press any key to awake</small>
+    </ScreenComponent>
+  )}
+</AnimatePresence>
+```
+
+Lưu ý:
+
+- Phải là con trực tiếp của `AnimatePresence` thì exit animation mới chạy.
+- Cần truyền `key` khi dùng trong `AnimatePresence` để React phân biệt các màn hình.
+- `MotionConfig reducedMotion="user"` trong `__root.tsx` tự tắt transform khi người dùng bật reduced motion, nên không cần xử lý thêm trong component.
+
 # Learn More
 
 You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).

@@ -29,7 +29,8 @@
   --color-traffic-green: #28c840;
 
   /* Typography */
-  --font-sans: 'Inter', -apple-system, 'Segoe UI', 'Ubuntu', system-ui, sans-serif;
+  --font-sans:
+    'Inter', -apple-system, 'Segoe UI', 'Ubuntu', system-ui, sans-serif;
   --font-serif: 'Literata', Georgia, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
@@ -40,6 +41,11 @@
 html,
 body {
   font-family: var(--font-sans);
+  background: var(--color-navy);
+  color: var(--color-paper-white);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
   -webkit-font-smoothing: antialiased;
 }
 

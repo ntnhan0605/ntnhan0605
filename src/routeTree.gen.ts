@@ -10,53 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as LockscreenRouteImport } from './routes/lockscreen'
-import { Route as PoweroffRouteImport } from './routes/poweroff'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LockscreenRoute = LockscreenRouteImport.update({
-  id: '/lockscreen',
-  path: '/lockscreen',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoweroffRoute = PoweroffRouteImport.update({
-  id: '/poweroff',
-  path: '/poweroff',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/lockscreen': typeof LockscreenRoute
-  '/poweroff': typeof PoweroffRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/lockscreen': typeof LockscreenRoute
-  '/poweroff': typeof PoweroffRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/lockscreen': typeof LockscreenRoute
-  '/poweroff': typeof PoweroffRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lockscreen' | '/poweroff'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lockscreen' | '/poweroff'
-  id: '__root__' | '/' | '/lockscreen' | '/poweroff'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LockscreenRoute: typeof LockscreenRoute
-  PoweroffRoute: typeof PoweroffRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,27 +48,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lockscreen': {
-      id: '/lockscreen'
-      path: '/lockscreen'
-      fullPath: '/lockscreen'
-      preLoaderRoute: typeof LockscreenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/poweroff': {
-      id: '/poweroff'
-      path: '/poweroff'
-      fullPath: '/poweroff'
-      preLoaderRoute: typeof PoweroffRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LockscreenRoute: LockscreenRoute,
-  PoweroffRoute: PoweroffRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
